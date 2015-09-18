@@ -33,6 +33,7 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         setVisible(true);
         setLocationRelativeTo(null);
+        setExtendedState(MAXIMIZED_BOTH);
         //labelInformacao.setVisible(false);  
         
         //Icone na janela  
@@ -46,10 +47,10 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        painelBackground = new javax.swing.JPanel();
+        painelBackground = new javax.swing.JLayeredPane();
         logotipoCentral = new javax.swing.JLabel();
-        labelInfo = new javax.swing.JLabel();
         labelPop = new javax.swing.JLabel();
+        labelInfo = new javax.swing.JLabel();
         labelInformacao = new javax.swing.JLabel();
         menu = new javax.swing.JMenuBar();
         arquivo = new javax.swing.JMenu();
@@ -66,17 +67,9 @@ public class Principal extends javax.swing.JFrame {
         setTitle("SOFTNESS");
 
         painelBackground.setBackground(new java.awt.Color(255, 255, 255));
+        painelBackground.setOpaque(true);
 
         logotipoCentral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/LogoPequeno.jpg"))); // NOI18N
-
-        labelInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/info.png"))); // NOI18N
-        labelInfo.setToolTipText("\n");
-        labelInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        labelInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelInfoMouseClicked(evt);
-            }
-        });
 
         labelPop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/pop.png"))); // NOI18N
         labelPop.setToolTipText("Manual de Instruções (HELP)");
@@ -84,6 +77,15 @@ public class Principal extends javax.swing.JFrame {
         labelPop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelPopMouseClicked(evt);
+            }
+        });
+
+        labelInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/info.png"))); // NOI18N
+        labelInfo.setToolTipText("\n");
+        labelInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelInfoMouseClicked(evt);
             }
         });
 
@@ -98,27 +100,34 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(labelInfo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelBackgroundLayout.createSequentialGroup()
+                        .addGap(303, 303, 303)
+                        .addComponent(logotipoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(labelPop)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBackgroundLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logotipoCentral)
-                .addGap(349, 349, 349))
         );
         painelBackgroundLayout.setVerticalGroup(
             painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelBackgroundLayout.createSequentialGroup()
-                .addContainerGap(175, Short.MAX_VALUE)
-                .addComponent(logotipoCentral)
-                .addGap(192, 192, 192)
-                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelPop)
-                    .addComponent(labelInfo)
-                    .addComponent(labelInformacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBackgroundLayout.createSequentialGroup()
+                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelBackgroundLayout.createSequentialGroup()
+                        .addContainerGap(436, Short.MAX_VALUE)
+                        .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelPop)
+                            .addComponent(labelInfo)))
+                    .addGroup(painelBackgroundLayout.createSequentialGroup()
+                        .addComponent(logotipoCentral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
+        painelBackground.setLayer(logotipoCentral, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        painelBackground.setLayer(labelPop, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        painelBackground.setLayer(labelInfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        painelBackground.setLayer(labelInformacao, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         arquivo.setText("Arquivo");
 
@@ -194,11 +203,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelBackground)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelBackground)
         );
 
         pack();
@@ -237,9 +246,19 @@ public class Principal extends javax.swing.JFrame {
     private void clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteActionPerformed
         //Chama cadastro de Cliente
         Cliente cli = new Cliente();
-        //painelBackground.add(cli);
+        painelBackground.add(cli);
         cli.setVisible(true);
     }//GEN-LAST:event_clienteActionPerformed
+
+    private void labelPopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPopMouseClicked
+        File pdf = new File("C:\\Users\\Mauricio\\Desktop\\Projeto Tópicos\\sofitness\\src\\Documents\\MANUAL DE INSTRUÇÕES SOFTNESS.pdf");
+        try {
+            Desktop.getDesktop().open(pdf);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro ao abrir PDF: " + ex);
+        }
+    }//GEN-LAST:event_labelPopMouseClicked
 
     private void labelInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInfoMouseClicked
 
@@ -251,16 +270,6 @@ public class Principal extends javax.swing.JFrame {
             vcont = false;
         }
     }//GEN-LAST:event_labelInfoMouseClicked
-
-    private void labelPopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPopMouseClicked
-        File pdf = new File("C:\\Users\\Mauricio\\Desktop\\Projeto Tópicos\\sofitness\\src\\Documents\\MANUAL DE INSTRUÇÕES SOFTNESS.pdf");
-        try {
-            Desktop.getDesktop().open(pdf);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro ao abrir PDF: " + ex);
-        }
-    }//GEN-LAST:event_labelPopMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu arquivo;
@@ -274,7 +283,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem logoff;
     private javax.swing.JLabel logotipoCentral;
     private javax.swing.JMenuBar menu;
-    private javax.swing.JPanel painelBackground;
+    private javax.swing.JLayeredPane painelBackground;
     private javax.swing.JMenuItem professor;
     private javax.swing.JMenuItem sair;
     private javax.swing.JMenuItem usuario;

@@ -1,0 +1,23 @@
+|== Divisao de tarefas ==|
+
+Daiara Paes
+
+- Fornecedor;
+- Professor.
+
+Mauricio Cardoso
+
+- Login;
+- Janela Principal;
+- Cadastro de Cliente (Modelo).
+
+Mayara Oliveira
+
+- Equipamentos;
+- Usuarios.
+
+|== Observacoes Importantes ==|
+
+* Seguir Especificacao do Projeto (Pasta Documents).
+* Seguir padrao de Janela e cores, conforme tela de Clientes.
+* A Documentacao e realizada por todo o grupo conforme finalizado os trabalhos.
