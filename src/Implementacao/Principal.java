@@ -1,14 +1,13 @@
 /*--------------------------- Softness ---------------------------------------
-    Rotina: Main
+ Rotina: Main
  Descrição: Janela Principal da aplicação
-     Fonte: Principal.java
-     @utor: Mauricio Pires Cardoso
-Observação: 
----------------------------- Alteração ---------------------------------------
-Data     Autor          Descrição
--------- -------------- ------------------------------------------------------
-------------------------------------------------------------------------------*/
-
+ Fonte: Principal.java
+ @utor: Mauricio Pires Cardoso
+ Observação: 
+ ---------------------------- Alteração ---------------------------------------
+ Data     Autor          Descrição
+ -------- -------------- ------------------------------------------------------
+ ------------------------------------------------------------------------------*/
 //Pacote
 package Implementacao;
 
@@ -16,6 +15,7 @@ package Implementacao;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.net.URL;
 import javax.swing.JOptionPane;
@@ -23,8 +23,8 @@ import javax.swing.JOptionPane;
 //Classe Principal
 public class Principal extends javax.swing.JFrame {
 
-    boolean vcont;
-    
+    boolean vcont = false;
+
     //Construtor
     public Principal() {
         initComponents();
@@ -33,13 +33,13 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         setVisible(true);
         setLocationRelativeTo(null);
-        setExtendedState(MAXIMIZED_BOTH);
+        //setExtendedState(MAXIMIZED_BOTH);
         //labelInformacao.setVisible(false);  
-        
+
         //Icone na janela  
-        URL url = this.getClass().getResource("/Icones/iconeArea.png");  
-        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);  
-        this.setIconImage(imagemTitulo); 
+        URL url = this.getClass().getResource("/Icones/iconeArea.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
     }
 
     //Código Drag and Drop
@@ -65,6 +65,14 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SOFTNESS");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         painelBackground.setBackground(new java.awt.Color(255, 255, 255));
         painelBackground.setOpaque(true);
@@ -89,39 +97,36 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        labelInformacao.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
-        labelInformacao.setText("<html><b>Desenvolvido por:</b>Daiara Paes, Mauricio Cardoso, Mayara Oliveira      <b> Data:</b> Setembro/2015       <b>Versão:</b> 1.0");
+        labelInformacao.setFont(new java.awt.Font("Vrinda", 0, 12)); // NOI18N
+        labelInformacao.setText("<html><b> Desenvolvido por: </b><br>   Daiara Paes, Mauricio Cardoso, Mayara Oliveira      <br><b> Data:</b> Setembro/2015       <b>Versão:</b> 1.0");
 
         javax.swing.GroupLayout painelBackgroundLayout = new javax.swing.GroupLayout(painelBackground);
         painelBackground.setLayout(painelBackgroundLayout);
         painelBackgroundLayout.setHorizontalGroup(
             painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
                 .addComponent(labelInfo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(painelBackgroundLayout.createSequentialGroup()
-                        .addGap(303, 303, 303)
-                        .addComponent(logotipoCentral, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelPop)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBackgroundLayout.createSequentialGroup()
+                .addContainerGap(365, Short.MAX_VALUE)
+                .addComponent(logotipoCentral)
+                .addGap(363, 363, 363))
         );
         painelBackgroundLayout.setVerticalGroup(
             painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBackgroundLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(logotipoCentral)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(painelBackgroundLayout.createSequentialGroup()
-                        .addContainerGap(436, Short.MAX_VALUE)
-                        .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelPop)
-                            .addComponent(labelInfo)))
-                    .addGroup(painelBackgroundLayout.createSequentialGroup()
-                        .addComponent(logotipoCentral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(labelPop)
+                    .addComponent(labelInfo)
+                    .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         painelBackground.setLayer(logotipoCentral, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -262,14 +267,27 @@ public class Principal extends javax.swing.JFrame {
 
     private void labelInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInfoMouseClicked
 
-        if(vcont == false){
+        if (vcont == false) {
             labelInformacao.setVisible(false);
             vcont = true;
-        }else{
+        } else {
             labelInformacao.setVisible(true);
             vcont = false;
         }
     }//GEN-LAST:event_labelInfoMouseClicked
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+  
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        //Verifica se o usuário deseja mesmo sair
+        int aux = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "SAIR", JOptionPane.YES_NO_OPTION);
+
+        if (aux == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu arquivo;
