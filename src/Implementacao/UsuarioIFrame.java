@@ -16,9 +16,9 @@ import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Usuario extends javax.swing.JInternalFrame {
+public class UsuarioIFrame extends javax.swing.JInternalFrame {
 
-    public Usuario() {
+    public UsuarioIFrame() {
         initComponents();
 
         try {
@@ -95,6 +95,11 @@ public class Usuario extends javax.swing.JInternalFrame {
         btLimparUsuario.setText("Limpar");
         btLimparUsuario.setContentAreaFilled(false);
         btLimparUsuario.setOpaque(true);
+        btLimparUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimparUsuarioActionPerformed(evt);
+            }
+        });
 
         checkAtivoUsuario.setBackground(new java.awt.Color(255, 255, 255));
         checkAtivoUsuario.setText("Ativo");
@@ -261,6 +266,11 @@ public class Usuario extends javax.swing.JInternalFrame {
     private void campoEmailUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEmailUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoEmailUsuarioActionPerformed
+
+    private void btLimparUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparUsuarioActionPerformed
+    
+        
+    }//GEN-LAST:event_btLimparUsuarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

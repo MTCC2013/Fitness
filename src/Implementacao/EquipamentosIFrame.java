@@ -16,9 +16,9 @@ import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Equipamentos extends javax.swing.JInternalFrame {
+public class EquipamentosIFrame extends javax.swing.JInternalFrame {
 
-    public Equipamentos() {
+    public EquipamentosIFrame() {
         initComponents();
 
         try {

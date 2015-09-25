@@ -21,12 +21,12 @@ import java.net.URL;
 import javax.swing.JOptionPane;
 
 //Classe Principal
-public class Principal extends javax.swing.JFrame {
+public class PrincipalFrame extends javax.swing.JFrame {
 
     boolean vcont = false;
 
     //Construtor
-    public Principal() {
+    public PrincipalFrame() {
         initComponents();
 
         //Caracteristicas da Janela
@@ -235,21 +235,21 @@ public class Principal extends javax.swing.JFrame {
 
         if (aux == JOptionPane.YES_OPTION) {
             this.dispose();
-            Login login = new Login();
+            LoginFrame login = new LoginFrame();
             login.setVisible(true);
         }
     }//GEN-LAST:event_logoffActionPerformed
 
     private void fornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fornecedorActionPerformed
         // Chama a tela de Cadastro de Fornecedor
-        Fornecedor forn = new Fornecedor();
+        FornecedorIFrame forn = new FornecedorIFrame();
         painelBackground.add(forn);
         forn.setVisible(true);
     }//GEN-LAST:event_fornecedorActionPerformed
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
         // Chama a tela de Cadastro de Usuário
-        Usuario usu = new Usuario();
+        UsuarioIFrame usu = new UsuarioIFrame();
         painelBackground.add(usu);
         usu.setVisible(true);
     }//GEN-LAST:event_usuarioActionPerformed
@@ -266,7 +266,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteActionPerformed
         //Chama cadastro de Cliente
-        Cliente cli = new Cliente();
+        ClienteIFrame cli = new ClienteIFrame();
         painelBackground.add(cli);
         cli.setVisible(true);
     }//GEN-LAST:event_clienteActionPerformed
@@ -307,14 +307,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void professorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_professorActionPerformed
         //Chama a tela de Cadastro de Professor
-        Professor prof = new Professor();
+        ProfessorIFrame prof = new ProfessorIFrame();
         painelBackground.add(prof);
         prof.setVisible(true);
     }//GEN-LAST:event_professorActionPerformed
 
     private void equipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipamentoActionPerformed
         // Chama a tela de Cadastro de Equipamento
-        Equipamentos equi = new Equipamentos();
+        EquipamentosIFrame equi = new EquipamentosIFrame();
         painelBackground.add(equi);
         equi.setVisible(true);
     }//GEN-LAST:event_equipamentoActionPerformed

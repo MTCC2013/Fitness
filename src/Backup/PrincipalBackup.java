@@ -209,7 +209,7 @@ public class PrincipalBackup extends javax.swing.JFrame {
 
         if (aux == JOptionPane.YES_OPTION) {
             this.dispose();
-            Login login = new Login();
+            LoginFrame login = new LoginFrame();
             login.setVisible(true);
         }
     }//GEN-LAST:event_logoffActionPerformed
