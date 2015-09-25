@@ -204,6 +204,9 @@
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//Nova ActionListener&#xa;btSalvarUsuario.addActionListener(listenerusuario);&#xa;btSalvarUsuario.setActionCommand(&quot;salvar&quot;);"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="labelEmailUsuario">
           <Properties>
@@ -225,6 +228,10 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btLimparUsuarioActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//Nova ActionListener&#xa;btLimparUsuario.addActionListener(listenerusuario);&#xa;btLimparUsuario.setActionCommand(&quot;limpar&quot;);&#xa;&#xa;&#xa;/*"/>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="*/"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JCheckBox" name="checkAtivoUsuario">
           <Properties>

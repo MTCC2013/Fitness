@@ -11,12 +11,30 @@
 //Pacote
 package Implementacao;
 
+import Classes.Usuario;
+import Classes.UsuarioActionListener;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UsuarioIFrame extends javax.swing.JInternalFrame {
+
+    private UsuarioActionListener listenerusuario
+            = new UsuarioActionListener(this);
+    
+    
+    public Usuario getUsuario(){
+        Usuario u = new Usuario();
+        //u.setCodigo(Integer.valueOf(jTextField1.getText()));
+        //u.setNome(jTextField2.getText());
+        return u;
+    }
+    
+    public Usuario setUsuario(){
+        Usuario u = new Usuario();
+        return u;
+    }
 
     public UsuarioIFrame() {
         initComponents();
@@ -33,6 +51,7 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         }
     }
 
+        //Implementação do ActionListener
     //Código Drag and Drop
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -87,6 +106,9 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         btSalvarUsuario.setText("Salvar");
         btSalvarUsuario.setContentAreaFilled(false);
         btSalvarUsuario.setOpaque(true);
+        //Nova ActionListener
+        btSalvarUsuario.addActionListener(listenerusuario);
+        btSalvarUsuario.setActionCommand("salvar");
 
         labelEmailUsuario.setText("E-mail:");
 
@@ -95,11 +117,17 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         btLimparUsuario.setText("Limpar");
         btLimparUsuario.setContentAreaFilled(false);
         btLimparUsuario.setOpaque(true);
+        //Nova ActionListener
+        btLimparUsuario.addActionListener(listenerusuario);
+        btLimparUsuario.setActionCommand("limpar");
+
+        /*
         btLimparUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btLimparUsuarioActionPerformed(evt);
             }
         });
+        */
 
         checkAtivoUsuario.setBackground(new java.awt.Color(255, 255, 255));
         checkAtivoUsuario.setText("Ativo");
@@ -268,8 +296,8 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_campoEmailUsuarioActionPerformed
 
     private void btLimparUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparUsuarioActionPerformed
-    
-        
+
+
     }//GEN-LAST:event_btLimparUsuarioActionPerformed
 
 
