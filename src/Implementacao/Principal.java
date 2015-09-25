@@ -173,11 +173,21 @@ public class Principal extends javax.swing.JFrame {
         professor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         professor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/professor.png"))); // NOI18N
         professor.setText("Professor");
+        professor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                professorActionPerformed(evt);
+            }
+        });
         cadastro.add(professor);
 
         equipamento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         equipamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/equipamento.png"))); // NOI18N
         equipamento.setText("Equipamento");
+        equipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                equipamentoActionPerformed(evt);
+            }
+        });
         cadastro.add(equipamento);
 
         fornecedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
@@ -231,11 +241,17 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_logoffActionPerformed
 
     private void fornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fornecedorActionPerformed
-        // TODO add your handling code here:
+        // Chama a tela de Cadastro de Fornecedor
+        Fornecedor forn = new Fornecedor();
+        painelBackground.add(forn);
+        forn.setVisible(true);
     }//GEN-LAST:event_fornecedorActionPerformed
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
-        // TODO add your handling code here:
+        // Chama a tela de Cadastro de Usuário
+        Usuario usu = new Usuario();
+        painelBackground.add(usu);
+        usu.setVisible(true);
     }//GEN-LAST:event_usuarioActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
@@ -288,6 +304,20 @@ public class Principal extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_formWindowClosing
+
+    private void professorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_professorActionPerformed
+        //Chama a tela de Cadastro de Professor
+        Professor prof = new Professor();
+        painelBackground.add(prof);
+        prof.setVisible(true);
+    }//GEN-LAST:event_professorActionPerformed
+
+    private void equipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipamentoActionPerformed
+        // Chama a tela de Cadastro de Equipamento
+        Equipamentos equi = new Equipamentos();
+        painelBackground.add(equi);
+        equi.setVisible(true);
+    }//GEN-LAST:event_equipamentoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu arquivo;
