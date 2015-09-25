@@ -3,6 +3,7 @@ package Classes;
 
 import java.util.Date;
 
+
 /**
  * Implementação da Classe Equipamento
  * @author MayaraOliveira
