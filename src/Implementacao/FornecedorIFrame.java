@@ -11,10 +11,27 @@
 //Pacote
 package Implementacao;
 
+import Classes.Fornecedor;
+import Classes.FornecedorActionListener;
+import Classes.Professor;
+import Classes.ProfessorActionListener;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 
 public class FornecedorIFrame extends javax.swing.JInternalFrame {
+    
+      private FornecedorActionListener listenerf = 
+                    new FornecedorActionListener(this);
+   
+    
+    
+    public Fornecedor getFornecedor(){
+        Fornecedor f = new Fornecedor();
+       // p.setCodigo(Integer.valueOf(jTextField1.getText()));
+       // p.setNome(jTextField2.getText());
+        return f;
+    }
+
 
     public FornecedorIFrame() {
         initComponents();
@@ -53,9 +70,9 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
         labelEndereco = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         campoEndereco = new javax.swing.JTextField();
-        botaoSalvar = new javax.swing.JButton();
+        Salvarf = new javax.swing.JButton();
         labelEmail = new javax.swing.JLabel();
-        botaoSalvar1 = new javax.swing.JButton();
+        Cancelarf = new javax.swing.JButton();
         campoEmail = new javax.swing.JTextField();
         checkAtivo = new javax.swing.JCheckBox();
         labelTitulo = new javax.swing.JLabel();
@@ -146,24 +163,30 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
 
         labelEndereco.setText("Endereço:");
 
-        botaoSalvar.setBackground(new java.awt.Color(0, 0, 0));
-        botaoSalvar.setForeground(new java.awt.Color(255, 255, 255));
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.setContentAreaFilled(false);
-        botaoSalvar.setOpaque(true);
+        Salvarf.setBackground(new java.awt.Color(0, 0, 0));
+        Salvarf.setForeground(new java.awt.Color(255, 255, 255));
+        Salvarf.setText("Salvar");
+        Salvarf.addActionListener(listenerf);
+        Salvarf.setActionCommand("salvar");
+        Salvarf.setContentAreaFilled(false);
+        Salvarf.setOpaque(true);
 
         labelEmail.setText("E-mail:");
 
-        botaoSalvar1.setBackground(new java.awt.Color(0, 0, 0));
-        botaoSalvar1.setForeground(new java.awt.Color(255, 255, 255));
-        botaoSalvar1.setText("Cancelar ");
-        botaoSalvar1.setContentAreaFilled(false);
-        botaoSalvar1.setOpaque(true);
-        botaoSalvar1.addActionListener(new java.awt.event.ActionListener() {
+        Cancelarf.setBackground(new java.awt.Color(0, 0, 0));
+        Cancelarf.setForeground(new java.awt.Color(255, 255, 255));
+        Cancelarf.setText("Cancelar ");
+        Cancelarf.addActionListener(listenerf);
+        Cancelarf.setActionCommand("limpar");
+        Cancelarf.setContentAreaFilled(false);
+        Cancelarf.setOpaque(true);
+        /*
+        Cancelarf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvar1ActionPerformed(evt);
+                CancelarfActionPerformed(evt);
             }
         });
+        */
 
         checkAtivo.setBackground(new java.awt.Color(255, 255, 255));
         checkAtivo.setText("Ativo");
@@ -193,9 +216,9 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
                                 .addComponent(campoEmail)
                                 .addComponent(campoEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))))
                     .addGroup(painelDesktopLayout.createSequentialGroup()
-                        .addComponent(botaoSalvar1)
+                        .addComponent(Cancelarf)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoSalvar))
+                        .addComponent(Salvarf))
                     .addGroup(painelDesktopLayout.createSequentialGroup()
                         .addComponent(labelCodigo)
                         .addGap(388, 388, 388)
@@ -279,8 +302,8 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoSalvar)
-                    .addComponent(botaoSalvar1))
+                    .addComponent(Salvarf)
+                    .addComponent(Cancelarf))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         painelDesktop.setLayer(btSair, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -300,9 +323,9 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
         painelDesktop.setLayer(labelEndereco, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(jSeparator2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(campoEndereco, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        painelDesktop.setLayer(botaoSalvar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        painelDesktop.setLayer(Salvarf, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(labelEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        painelDesktop.setLayer(botaoSalvar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        painelDesktop.setLayer(Cancelarf, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(campoEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(checkAtivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(labelTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -335,9 +358,9 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCelularActionPerformed
 
-    private void botaoSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvar1ActionPerformed
+    private void CancelarfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoSalvar1ActionPerformed
+    }//GEN-LAST:event_CancelarfActionPerformed
 
     private void campoDtnascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDtnascActionPerformed
         // TODO add your handling code here:
@@ -353,8 +376,8 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoSalvar;
-    private javax.swing.JButton botaoSalvar1;
+    private javax.swing.JButton Cancelarf;
+    private javax.swing.JButton Salvarf;
     private javax.swing.JLabel btSair;
     private javax.swing.JFormattedTextField campoCPF;
     private javax.swing.JFormattedTextField campoCelular;
