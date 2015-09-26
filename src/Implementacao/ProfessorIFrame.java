@@ -11,10 +11,27 @@
 //Pacote
 package Implementacao;
 
+import Classes.Professor;
+import Classes.ProfessorActionListener;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class ProfessorIFrame extends javax.swing.JInternalFrame {
+    
+    
+   private ProfessorActionListener listenerprof = 
+                    new ProfessorActionListener(this);
+   
+    
+    
+    public Professor getProfessor(){
+        Professor p = new Professor();
+       // p.setCodigo(Integer.valueOf(jTextField1.getText()));
+       // p.setNome(jTextField2.getText());
+        return p;
+    }
 
     public ProfessorIFrame() {
         initComponents();
@@ -29,6 +46,7 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
             e.printStackTrace();
         }
     }
+    
 
     //Código Drag and Drop
     @SuppressWarnings("unchecked")
@@ -53,9 +71,9 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         labelEndereco = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         campoEndereco = new javax.swing.JTextField();
-        botaoSalvar = new javax.swing.JButton();
+        Saalvar = new javax.swing.JButton();
         labelEmail = new javax.swing.JLabel();
-        botaoSalvar1 = new javax.swing.JButton();
+        Cancelar = new javax.swing.JButton();
         campoEmail = new javax.swing.JTextField();
         checkAtivo = new javax.swing.JCheckBox();
         labelTitulo = new javax.swing.JLabel();
@@ -71,7 +89,7 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         selectSexo3 = new javax.swing.JComboBox();
 
         setForeground(new java.awt.Color(0, 51, 102));
-        setTitle("Cadastro de Clientes");
+        setTitle("Cadastro de Professores");
         setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         setVisible(true);
 
@@ -154,22 +172,27 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
 
         labelEndereco.setText("Endereço:");
 
-        botaoSalvar.setBackground(new java.awt.Color(0, 0, 0));
-        botaoSalvar.setForeground(new java.awt.Color(255, 255, 255));
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.setContentAreaFilled(false);
-        botaoSalvar.setOpaque(true);
+        Saalvar.setBackground(new java.awt.Color(0, 0, 0));
+        Saalvar.setForeground(new java.awt.Color(255, 255, 255));
+        Saalvar.setText("Salvar");
+        Saalvar.setContentAreaFilled(false);
+        Saalvar.addActionListener(listenerprof);
+        Saalvar.setActionCommand("salvar");
+        Saalvar.setOpaque(true);
 
         labelEmail.setText("E-mail:");
 
-        botaoSalvar1.setBackground(new java.awt.Color(0, 0, 0));
-        botaoSalvar1.setForeground(new java.awt.Color(255, 255, 255));
-        botaoSalvar1.setText("Cancelar ");
-        botaoSalvar1.setContentAreaFilled(false);
-        botaoSalvar1.setOpaque(true);
-        botaoSalvar1.addActionListener(new java.awt.event.ActionListener() {
+        Cancelar.setBackground(new java.awt.Color(0, 0, 0));
+        Cancelar.setForeground(new java.awt.Color(255, 255, 255));
+        Cancelar.setText("Cancelar ");
+        Cancelar.setContentAreaFilled(false);
+        Cancelar.addActionListener(listenerprof);
+        Cancelar.setActionCommand("limpar");
+        Cancelar.setOpaque(true);
+        /*
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvar1ActionPerformed(evt);
+                CancelarActionPerformed(evt);
             }
         });
 
@@ -177,7 +200,7 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         checkAtivo.setText("Ativo");
 
         labelTitulo.setFont(new java.awt.Font("TEC-FONT D Helv", 1, 14)); // NOI18N
-        labelTitulo.setText("CLIENTES ");
+        labelTitulo.setText("PROFESSOR");
 
         labelCodigo.setText("Código:");
 
@@ -233,20 +256,15 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
                         .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(painelDesktopLayout.createSequentialGroup()
-                                .addComponent(botaoSalvar1)
+                                .addComponent(Cancelar)
                                 .addGap(18, 18, 18)
-                                .addComponent(botaoSalvar)))
+                                .addComponent(Saalvar)))
                         .addGap(112, 112, 112))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDesktopLayout.createSequentialGroup()
                 .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(painelDesktopLayout.createSequentialGroup()
                         .addGap(208, 208, 208)
-                        .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDesktopLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(102, 102, 102))))
+                        .addComponent(jSeparator1))
                     .addGroup(painelDesktopLayout.createSequentialGroup()
                         .addGap(11, 107, Short.MAX_VALUE)
                         .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -302,7 +320,10 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
                             .addGroup(painelDesktopLayout.createSequentialGroup()
                                 .addComponent(labelCodigo)
                                 .addGap(388, 388, 388)
-                                .addComponent(checkAtivo)))))
+                                .addComponent(checkAtivo))
+                            .addGroup(painelDesktopLayout.createSequentialGroup()
+                                .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(102, 102, 102)))))
                 .addGap(110, 110, 110))
         );
         painelDesktopLayout.setVerticalGroup(
@@ -362,9 +383,9 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoSalvar1)
-                    .addComponent(botaoSalvar))
-                .addContainerGap(64, Short.MAX_VALUE))
+                    .addComponent(Cancelar)
+                    .addComponent(Saalvar))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         painelDesktop.setLayer(btSair, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(labelNome, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -383,9 +404,11 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         painelDesktop.setLayer(labelEndereco, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(jSeparator2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(campoEndereco, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        painelDesktop.setLayer(botaoSalvar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        painelDesktop.setLayer(Saalvar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(labelEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        painelDesktop.setLayer(botaoSalvar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        painelDesktop.setLayer(Cancelar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        */
         painelDesktop.setLayer(campoEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(checkAtivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(labelTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -422,9 +445,9 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCelularActionPerformed
 
-    private void botaoSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvar1ActionPerformed
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoSalvar1ActionPerformed
+    }//GEN-LAST:event_CancelarActionPerformed
 
     private void campoDtnascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDtnascActionPerformed
         // TODO add your handling code here:
@@ -460,8 +483,8 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoSalvar;
-    private javax.swing.JButton botaoSalvar1;
+    private javax.swing.JButton Cancelar;
+    private javax.swing.JButton Saalvar;
     private javax.swing.JLabel btSair;
     private javax.swing.JFormattedTextField campoCPF;
     private javax.swing.JFormattedTextField campoCelular;
@@ -496,3 +519,6 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox selectSexo3;
     // End of variables declaration//GEN-END:variables
 }
+                
+
+        
