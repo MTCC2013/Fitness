@@ -1,107 +1,111 @@
-
+/*--------------------------- Softness ---------------------------------------
+ Rotina: Classes
+ Descrição: Classe Equipamento
+ Fonte: Equipamento.java
+ @utor: Mayara Freitas de Oliveira
+ Observação: 
+ ---------------------------- Alteração ---------------------------------------
+ Data     Autor          Descrição
+ -------- -------------- ------------------------------------------------------
+ ------------------------------------------------------------------------------*/
+//Pacotes
 package Classes;
 
+//Importações
 import java.util.Date;
 
-
-/**
- * Implementação da Classe Equipamento
- * @author MayaraOliveira
- */
 public class Equipamento {
     
-    private int codigoEquip;
-    private String descricao;
-    private Date dataFabricacao;
-    private int codigoUsuario;
-    private String marca;
-    private String modelo;
-    private String fornEquip;
-    private String tipo;
-    private String observacao;
-    private boolean ativo;
+    private int eqp_codigo;
+    private String eqp_descricao;
+    private Date eqp_dtfabricacao;
+    private int usu_codigo;
+    private String eqp_marca;
+    private String eqp_modelo;
+    private int for_codigo;
+    private int eqp_tipo;
+    private String eqp_obs;
+    private boolean eqp_ativo;
 
-    public int getCodigoEquip() {
-        return codigoEquip;
+    public int getEqp_codigo() {
+        return eqp_codigo;
     }
 
-    public void setCodigoEquip(int codigoEquip) {
-        this.codigoEquip = codigoEquip;
+    public void setEqp_codigo(int eqp_codigo) {
+        this.eqp_codigo = eqp_codigo;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getEqp_descricao() {
+        return eqp_descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setEqp_descricao(String eqp_descricao) {
+        this.eqp_descricao = eqp_descricao;
     }
 
-    public Date getDataFabricacao() {
-        return dataFabricacao;
+    public Date getEqp_dtfabricacao() {
+        return eqp_dtfabricacao;
     }
 
-    public void setDataFabricacao(Date dataFabricacao) {
-        this.dataFabricacao = dataFabricacao;
+    public void setEqp_dtfabricacao(Date eqp_dtfabricacao) {
+        this.eqp_dtfabricacao = eqp_dtfabricacao;
     }
 
-    public int getCodigoUsuario() {
-        return codigoUsuario;
+    public int getUsu_codigo() {
+        return usu_codigo;
     }
 
-    public void setCodigoUsuario(int codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
+    public void setUsu_codigo(int usu_codigo) {
+        this.usu_codigo = usu_codigo;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getEqp_marca() {
+        return eqp_marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setEqp_marca(String eqp_marca) {
+        this.eqp_marca = eqp_marca;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getEqp_modelo() {
+        return eqp_modelo;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setEqp_modelo(String eqp_modelo) {
+        this.eqp_modelo = eqp_modelo;
     }
 
-    public String getFornEquip() {
-        return fornEquip;
+    public int getFor_codigo() {
+        return for_codigo;
     }
 
-    public void setFornEquip(String fornEquip) {
-        this.fornEquip = fornEquip;
+    public void setFor_codigo(int for_codigo) {
+        this.for_codigo = for_codigo;
     }
 
-    public String getTipo() {
-        return tipo;
+    public int getEqp_tipo() {
+        return eqp_tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setEqp_tipo(int eqp_tipo) {
+        this.eqp_tipo = eqp_tipo;
     }
 
-    public String getObservacao() {
-        return observacao;
+    public String getEqp_obs() {
+        return eqp_obs;
     }
 
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
+    public void setEqp_obs(String eqp_obs) {
+        this.eqp_obs = eqp_obs;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isEqp_ativo() {
+        return eqp_ativo;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setEqp_ativo(boolean eqp_ativo) {
+        this.eqp_ativo = eqp_ativo;
     }
-    
-    
     
     
 }

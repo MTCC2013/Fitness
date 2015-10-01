@@ -1,77 +1,81 @@
-
+/*--------------------------- Softness ---------------------------------------
+ Rotina: Classes
+ Descrição: Classe Usuario
+ Fonte: Usuario.java
+ @utor: Mayara Freitas de Oliveira
+ Observação: 
+ ---------------------------- Alteração ---------------------------------------
+ Data     Autor          Descrição
+ -------- -------------- ------------------------------------------------------
+ ------------------------------------------------------------------------------*/
+//Pacotes
 package Classes;
 
-/**
- * Implementação da Classe Usuário
- * @author MayaraOliveira
- */
-public class Usuario {
+public class Usuario {    
     
-    
-    private int codigoUsuario;
-    private String nome;
-    private String email;
-    private String nivelAcesso;
-    private String usuario;
-    private String senha;
-    private boolean ativo;
+    private int usu_codigo;
+    private String usu_nome;
+    private String usu_email;
+    private String usu_nivel;
+    private String usu_login;
+    private String usu_senha;
+    private boolean usu_ativo;
 
-    public int getCodigoUsuario() {
-        return codigoUsuario;
+    public int getUsu_codigo() {
+        return usu_codigo;
     }
 
-    public void setCodigoUsuario(int codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
+    public void setUsu_codigo(int usu_codigo) {
+        this.usu_codigo = usu_codigo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getUsu_nome() {
+        return usu_nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setUsu_nome(String usu_nome) {
+        this.usu_nome = usu_nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsu_email() {
+        return usu_email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsu_email(String usu_email) {
+        this.usu_email = usu_email;
     }
 
-    public String getNivelAcesso() {
-        return nivelAcesso;
+    public String getUsu_nivel() {
+        return usu_nivel;
     }
 
-    public void setNivelAcesso(String nivelAcesso) {
-        this.nivelAcesso = nivelAcesso;
+    public void setUsu_nivel(String usu_nivel) {
+        this.usu_nivel = usu_nivel;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUsu_login() {
+        return usu_login;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsu_login(String usu_login) {
+        this.usu_login = usu_login;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getUsu_senha() {
+        return usu_senha;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setUsu_senha(String usu_senha) {
+        this.usu_senha = usu_senha;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isUsu_ativo() {
+        return usu_ativo;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setUsu_ativo(boolean usu_ativo) {
+        this.usu_ativo = usu_ativo;
     }
-    
-    
+
     
 }

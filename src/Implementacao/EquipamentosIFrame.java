@@ -11,11 +11,6 @@
 //Pacote
 package Implementacao;
 
-import static java.awt.Frame.MAXIMIZED_BOTH;
-import java.beans.PropertyVetoException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class EquipamentosIFrame extends javax.swing.JInternalFrame {
 
     public EquipamentosIFrame() {

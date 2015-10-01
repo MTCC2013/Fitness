@@ -1,131 +1,127 @@
-
+/*--------------------------- Softness ---------------------------------------
+ Rotina: Classes
+ Descrição: Classe Professor
+ Fonte: Professor.java
+ @utor: Daiara Paes da Rosa
+ Observação: 
+ ---------------------------- Alteração ---------------------------------------
+ Data     Autor          Descrição
+ -------- -------------- ------------------------------------------------------
+ ------------------------------------------------------------------------------*/
+//Pacotes
 package Classes;
 
+//Importações
 import java.util.Date;
 
-
-/**
- *
- * @author Daiara
- */
 public class Professor {
-    
-     private int codigoProfessor;
-    private String nome;
-    private String CPF;
-    private String RG;
-    private  Date datanacimento;
-    private String celular;
-    private String telefone;
-    private String enereço;
-    private String email;
-    private String sexo;
-    private String area;
-    private String basesalarial;  
 
-    public int getCodigoProfessor() {
-        return codigoProfessor;
+    private int prf_codigo;
+    private String prf_nome;
+    private String prf_cpf;
+    private String prf_rg;
+    private Date prf_dtnasc;
+    private int prf_celular;
+    private int prf_telefone;
+    private String prf_endereco;
+    private String prf_email;
+    private int prf_sexo;
+    private int prf_area;
+    private float prf_basesal;
+
+    public int getPrf_codigo() {
+        return prf_codigo;
     }
 
-    public void setCodigoProfessor(int codigoProfessor) {
-        this.codigoProfessor = codigoProfessor;
+    public void setPrf_codigo(int prf_codigo) {
+        this.prf_codigo = prf_codigo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getPrf_nome() {
+        return prf_nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setPrf_nome(String prf_nome) {
+        this.prf_nome = prf_nome;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getPrf_cpf() {
+        return prf_cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setPrf_cpf(String prf_cpf) {
+        this.prf_cpf = prf_cpf;
     }
 
-    public String getRG() {
-        return RG;
+    public String getPrf_rg() {
+        return prf_rg;
     }
 
-    public void setRG(String RG) {
-        this.RG = RG;
+    public void setPrf_rg(String prf_rg) {
+        this.prf_rg = prf_rg;
     }
 
-    public Date getDatanacimento() {
-        return datanacimento;
+    public Date getPrf_dtnasc() {
+        return prf_dtnasc;
     }
 
-    public void setDatanacimento(Date datanacimento) {
-        this.datanacimento = datanacimento;
+    public void setPrf_dtnasc(Date prf_dtnasc) {
+        this.prf_dtnasc = prf_dtnasc;
     }
 
-    public String getCelular() {
-        return celular;
+    public int getPrf_celular() {
+        return prf_celular;
     }
 
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public void setPrf_celular(int prf_celular) {
+        this.prf_celular = prf_celular;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public int getPrf_telefone() {
+        return prf_telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setPrf_telefone(int prf_telefone) {
+        this.prf_telefone = prf_telefone;
     }
 
-    public String getEnereço() {
-        return enereço;
+    public String getPrf_endereco() {
+        return prf_endereco;
     }
 
-    public void setEnereço(String enereço) {
-        this.enereço = enereço;
+    public void setPrf_endereco(String prf_endereco) {
+        this.prf_endereco = prf_endereco;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPrf_email() {
+        return prf_email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPrf_email(String prf_email) {
+        this.prf_email = prf_email;
     }
 
-    public String getSexo() {
-        return sexo;
+    public int getPrf_sexo() {
+        return prf_sexo;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setPrf_sexo(int prf_sexo) {
+        this.prf_sexo = prf_sexo;
     }
 
-    public String getArea() {
-        return area;
+    public int getPrf_area() {
+        return prf_area;
     }
 
-    public void setArea(String area) {
-        this.area = area;
+    public void setPrf_area(int prf_area) {
+        this.prf_area = prf_area;
     }
 
-    public String getBasesalarial() {
-        return basesalarial;
+    public float getPrf_basesal() {
+        return prf_basesal;
     }
 
-    public void setBasesalarial(String basesalarial) {
-        this.basesalarial = basesalarial;
+    public void setPrf_basesal(float prf_basesal) {
+        this.prf_basesal = prf_basesal;
     }
-
-    public boolean isAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
-    }
-    private boolean ativo;
-    
 }

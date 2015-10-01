@@ -13,10 +13,6 @@ package Implementacao;
 
 import Classes.Fornecedor;
 import Classes.FornecedorActionListener;
-import Classes.Professor;
-import Classes.ProfessorActionListener;
-import java.awt.event.WindowEvent;
-import javax.swing.JOptionPane;
 
 public class FornecedorIFrame extends javax.swing.JInternalFrame {
     
@@ -82,6 +78,7 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
         setForeground(new java.awt.Color(0, 51, 102));
         setTitle("Cadastro de Clientes");
         setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        setPreferredSize(new java.awt.Dimension(840, 471));
         setVisible(true);
 
         painelDesktop.setBackground(new java.awt.Color(255, 255, 255));
@@ -163,7 +160,7 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
 
         labelEndereco.setText("Endereço:");
 
-        Salvarf.setBackground(new java.awt.Color(0, 0, 0));
+        Salvarf.setBackground(new java.awt.Color(0, 51, 102));
         Salvarf.setForeground(new java.awt.Color(255, 255, 255));
         Salvarf.setText("Salvar");
         Salvarf.addActionListener(listenerf);
@@ -173,7 +170,7 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
 
         labelEmail.setText("E-mail:");
 
-        Cancelarf.setBackground(new java.awt.Color(0, 0, 0));
+        Cancelarf.setBackground(new java.awt.Color(0, 51, 102));
         Cancelarf.setForeground(new java.awt.Color(255, 255, 255));
         Cancelarf.setText("Cancelar ");
         Cancelarf.addActionListener(listenerf);
@@ -192,7 +189,8 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
         checkAtivo.setText("Ativo");
 
         labelTitulo.setFont(new java.awt.Font("TEC-FONT D Helv", 1, 14)); // NOI18N
-        labelTitulo.setText("FORNECEDOR");
+        labelTitulo.setForeground(new java.awt.Color(0, 51, 102));
+        labelTitulo.setText("CADASTRO DE FORNECEDOR");
 
         labelCodigo.setText("Código:");
 
@@ -202,61 +200,62 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
         painelDesktop.setLayout(painelDesktopLayout);
         painelDesktopLayout.setHorizontalGroup(
             painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDesktopLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(painelDesktopLayout.createSequentialGroup()
-                        .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelEndereco)
-                            .addComponent(labelEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(campoEmail)
-                                .addComponent(campoEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))))
-                    .addGroup(painelDesktopLayout.createSequentialGroup()
-                        .addComponent(Cancelarf)
-                        .addGap(18, 18, 18)
-                        .addComponent(Salvarf))
-                    .addGroup(painelDesktopLayout.createSequentialGroup()
-                        .addComponent(labelCodigo)
-                        .addGap(388, 388, 388)
-                        .addComponent(checkAtivo))
-                    .addGroup(painelDesktopLayout.createSequentialGroup()
-                        .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelDatanasc)
-                            .addComponent(labelCPF)
-                            .addComponent(labelNome))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(campoCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDesktopLayout.createSequentialGroup()
-                                .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelRG)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelDesktopLayout.createSequentialGroup()
-                                .addComponent(campoDtnasc, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(labelTelefone)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoTelefone)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelCelular)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelDesktopLayout.createSequentialGroup()
-                                .addGap(149, 149, 149)
-                                .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(110, 110, 110))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDesktopLayout.createSequentialGroup()
-                .addGap(0, 732, Short.MAX_VALUE)
+            .addGroup(painelDesktopLayout.createSequentialGroup()
+                .addGap(0, 798, Short.MAX_VALUE)
                 .addComponent(btSair)
                 .addContainerGap())
+            .addGroup(painelDesktopLayout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(painelDesktopLayout.createSequentialGroup()
+                            .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelEndereco)
+                                .addComponent(labelEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator2)
+                                .addComponent(campoEmail)
+                                .addComponent(campoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(painelDesktopLayout.createSequentialGroup()
+                            .addComponent(Cancelarf)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(Salvarf))
+                        .addGroup(painelDesktopLayout.createSequentialGroup()
+                            .addComponent(labelCodigo)
+                            .addGap(388, 388, 388)
+                            .addComponent(checkAtivo))
+                        .addGroup(painelDesktopLayout.createSequentialGroup()
+                            .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(labelDatanasc)
+                                .addComponent(labelCPF)
+                                .addComponent(labelNome))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(campoCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(campoNome, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDesktopLayout.createSequentialGroup()
+                                    .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelRG)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(painelDesktopLayout.createSequentialGroup()
+                                    .addComponent(campoDtnasc, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(10, 10, 10)
+                                    .addComponent(labelTelefone)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(campoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(labelCelular)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(campoCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDesktopLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(112, 112, 112)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelDesktopLayout.setVerticalGroup(
             painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,13 +297,13 @@ public class FornecedorIFrame extends javax.swing.JInternalFrame {
                 .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelEmail))
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Salvarf)
                     .addComponent(Cancelarf))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         painelDesktop.setLayer(btSair, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelDesktop.setLayer(labelNome, javax.swing.JLayeredPane.DEFAULT_LAYER);

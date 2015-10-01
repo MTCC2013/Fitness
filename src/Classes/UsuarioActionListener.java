@@ -1,28 +1,28 @@
-
+/*--------------------------- Softness ---------------------------------------
+ Rotina: Classes
+ Descrição: Classe Usuario
+ Fonte: UsuarioActionListener.java
+ @utor: Mayara Freitas de Oliveira
+ Observação: 
+ ---------------------------- Alteração ---------------------------------------
+ Data     Autor          Descrição
+ -------- -------------- ------------------------------------------------------
+ ------------------------------------------------------------------------------*/
+//Pacotes
 package Classes;
 
+//Importações
 import Implementacao.UsuarioIFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-/**
- * Classe que implementa a interação da classe 
- * Usuario com a Interface Usuario
- * @author MayaraOliveira
- */
 public class UsuarioActionListener implements ActionListener {
-    
-    //Declaração de váriavel do tipo
-    //UsuarioIFrame
-    
+       
     private UsuarioIFrame frameUsuario;
     
-    //Construtor
-    
     public UsuarioActionListener (UsuarioIFrame frameUsuario){
-        this.frameUsuario = frameUsuario;
-        
+        this.frameUsuario = frameUsuario;    
     }
     
     @Override
@@ -34,8 +34,6 @@ public class UsuarioActionListener implements ActionListener {
         } else if("limpar".equals(ae.getActionCommand())) {
             Usuario u = frameUsuario.setUsuario();
             JOptionPane.showMessageDialog(frameUsuario, "Ok!");
-        }
-       
-    }
-    
+        }       
+    }    
 }

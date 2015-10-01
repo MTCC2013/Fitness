@@ -97,7 +97,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
             }
         });
 
-        labelInformacao.setFont(new java.awt.Font("Vrinda", 0, 12)); // NOI18N
+        labelInformacao.setFont(new java.awt.Font("Vrinda", 0, 8)); // NOI18N
         labelInformacao.setText("<html><b> Desenvolvido por: </b><br>   Daiara Paes, Mauricio Cardoso, Mayara Oliveira      <br><b> Data:</b> Setembro/2015       <b>Versão:</b> 1.0");
 
         javax.swing.GroupLayout painelBackgroundLayout = new javax.swing.GroupLayout(painelBackground);
@@ -105,7 +105,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         painelBackgroundLayout.setHorizontalGroup(
             painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBackgroundLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(labelInfo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,23 +113,26 @@ public class PrincipalFrame extends javax.swing.JFrame {
                 .addComponent(labelPop)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBackgroundLayout.createSequentialGroup()
-                .addContainerGap(365, Short.MAX_VALUE)
+                .addContainerGap(373, Short.MAX_VALUE)
                 .addComponent(logotipoCentral)
-                .addGap(363, 363, 363))
+                .addGap(353, 353, 353))
         );
         painelBackgroundLayout.setVerticalGroup(
             painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBackgroundLayout.createSequentialGroup()
-                .addGap(137, 137, 137)
+                .addGap(151, 151, 151)
                 .addComponent(logotipoCentral)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelPop)
-                    .addComponent(labelInfo)
-                    .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(labelPop)
+                        .addComponent(labelInfo)))
                 .addContainerGap())
         );
-        painelBackground.setLayer(logotipoCentral, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        painelBackground.setLayer(logotipoCentral, javax.swing.JLayeredPane.DRAG_LAYER);
+
+        logotipoCentral.getAccessibleContext().setAccessibleParent(logotipoCentral);
         painelBackground.setLayer(labelPop, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelBackground.setLayer(labelInfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelBackground.setLayer(labelInformacao, javax.swing.JLayeredPane.DEFAULT_LAYER);

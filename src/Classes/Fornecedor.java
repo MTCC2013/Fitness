@@ -1,101 +1,109 @@
-
+/*--------------------------- Softness ---------------------------------------
+ Rotina: Classes
+ Descrição: Classe Fornecedor
+ Fonte: Fornecedor.java
+ @utor: Daiara Paes da Rosa
+ Observação: 
+ ---------------------------- Alteração ---------------------------------------
+ Data     Autor          Descrição
+ -------- -------------- ------------------------------------------------------
+ ------------------------------------------------------------------------------*/
+//Pacotes
 package Classes;
 
-/**
- *
- * @author Daiara
- */
 public class Fornecedor {
     
-    private int codigoFornecedor;
-    private String nome;
-    private int contato;
-    private String CNPJ;
-    private String IE;
-    private String UF;
-    private String cidade;
-    private String endereco;
-    private String email; 
-    private boolean ativo;
+    private int for_codigo;
+    private String for_nome;
+    private int for_contato;
+    private String for_cnpj;
+    private String for_ie;
+    private String for_uf;
+    private String for_cidade;
+    private String for_endereco;
+    private String for_email; 
+    private boolean for_ativo;
 
-    public int getCodigoFornecedor() {
-        return codigoFornecedor;
+    public int getFor_codigo() {
+        return for_codigo;
     }
 
-    public void setCodigoFornecedor(int codigoFornecedor) {
-        this.codigoFornecedor = codigoFornecedor;
+    public void setFor_codigo(int for_codigo) {
+        this.for_codigo = for_codigo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getFor_nome() {
+        return for_nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setFor_nome(String for_nome) {
+        this.for_nome = for_nome;
     }
 
-    public int getContato() {
-        return contato;
+    public int getFor_contato() {
+        return for_contato;
     }
 
-    public void setContato(int contato) {
-        this.contato = contato;
+    public void setFor_contato(int for_contato) {
+        this.for_contato = for_contato;
     }
 
-    public String getCNPJ() {
-        return CNPJ;
+    public String getFor_cnpj() {
+        return for_cnpj;
     }
 
-    public void setCNPJ(String CNPJ) {
-        this.CNPJ = CNPJ;
+    public void setFor_cnpj(String for_cnpj) {
+        this.for_cnpj = for_cnpj;
     }
 
-    public String getIE() {
-        return IE;
+    public String getFor_ie() {
+        return for_ie;
     }
 
-    public void setIE(String IE) {
-        this.IE = IE;
+    public void setFor_ie(String for_ie) {
+        this.for_ie = for_ie;
     }
 
-    public String getUF() {
-        return UF;
+    public String getFor_uf() {
+        return for_uf;
     }
 
-    public void setUF(String UF) {
-        this.UF = UF;
+    public void setFor_uf(String for_uf) {
+        this.for_uf = for_uf;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getFor_cidade() {
+        return for_cidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setFor_cidade(String for_cidade) {
+        this.for_cidade = for_cidade;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getFor_endereco() {
+        return for_endereco;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setFor_endereco(String for_endereco) {
+        this.for_endereco = for_endereco;
     }
 
-    public String getEmail() {
-        return email;
+    public String getFor_email() {
+        return for_email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setFor_email(String for_email) {
+        this.for_email = for_email;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isFor_ativo() {
+        return for_ativo;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setFor_ativo(boolean for_ativo) {
+        this.for_ativo = for_ativo;
     }
+    
+    
   
 }
