@@ -1,7 +1,7 @@
 /*--------------------------- Softness ---------------------------------------
- Rotina: Usuario
+ Rotina: Equipamento
  Descrição: Janela Cadastro de Usuario do Sistema
- Fonte: Usuario.java
+ Fonte: Equipamento.java
  @utor: Mayara Oliveira
  Observação: 
  ---------------------------- Alteração ---------------------------------------
@@ -11,24 +11,24 @@
 //Pacote
 package Implementacao;
 
-import Classes.Usuario;
-import Classes.UsuarioActionListener;
+import Classes.Equipamento;
+import Classes.EquipamentoActionListener;
 
-public class UsuarioIFrame extends javax.swing.JInternalFrame {
+public class EquipamentoIFrame extends javax.swing.JInternalFrame {
 
-    private UsuarioActionListener listenerusuario = new UsuarioActionListener(this);
+    private EquipamentoActionListener listenerusuario = new EquipamentoActionListener(this);
 
-    public Usuario getUsuario() {
-        Usuario u = new Usuario();
-        return u;
+    public Equipamento getEquipamento() {
+        Equipamento e = new Equipamento();
+        return e;
     }
 
-    public Usuario setUsuario() {
-        Usuario u = new Usuario();
-        return u;
+    public Equipamento setEquipamento() {
+        Equipamento e = new Equipamento();
+        return e;
     }
 
-    public UsuarioIFrame() {
+    public EquipamentoIFrame() {
         initComponents();
 
         try {
@@ -55,7 +55,6 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         campoNomeUsuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        campoEmailUsuario = new javax.swing.JTextField();
         btSalvarUsuario = new javax.swing.JButton();
         labelEmailUsuario = new javax.swing.JLabel();
         btLimparUsuario = new javax.swing.JButton();
@@ -63,13 +62,18 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         labeAcessoUsuario = new javax.swing.JLabel();
         tituloUsuarios = new javax.swing.JLabel();
         comboNivelUsuario = new javax.swing.JComboBox();
-        labelSenha = new javax.swing.JLabel();
         labelCodUsuario = new javax.swing.JLabel();
         codUsuario = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
-        campoUsuario = new javax.swing.JTextField();
-        labelUsuario = new javax.swing.JLabel();
-        campoSenha = new javax.swing.JPasswordField();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jTextField1 = new javax.swing.JTextField();
+        labelEmailUsuario1 = new javax.swing.JLabel();
+        labelEmailUsuario2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        comboNivelUsuario1 = new javax.swing.JComboBox();
+        labeAcessoUsuario1 = new javax.swing.JLabel();
+        labeAcessoUsuario2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setResizable(true);
         setTitle("Cadastro de Usuários");
@@ -86,13 +90,7 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        labelNomeUsuario.setText("Nome:");
-
-        campoEmailUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoEmailUsuarioActionPerformed(evt);
-            }
-        });
+        labelNomeUsuario.setText("Descrição:");
 
         btSalvarUsuario.setBackground(new java.awt.Color(0, 51, 102));
         btSalvarUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +101,7 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         btSalvarUsuario.addActionListener(listenerusuario);
         btSalvarUsuario.setActionCommand("salvar");
 
-        labelEmailUsuario.setText("E-mail:");
+        labelEmailUsuario.setText("Data de Fabricação:");
 
         btLimparUsuario.setBackground(new java.awt.Color(0, 51, 102));
         btLimparUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,26 +123,47 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         checkAtivoUsuario.setBackground(new java.awt.Color(255, 255, 255));
         checkAtivoUsuario.setText("Ativo");
 
-        labeAcessoUsuario.setText("Nível de Acesso:");
+        labeAcessoUsuario.setText("Fornecedor:");
 
         tituloUsuarios.setFont(new java.awt.Font("TEC-FONT D Helv", 1, 14)); // NOI18N
         tituloUsuarios.setForeground(new java.awt.Color(0, 51, 102));
-        tituloUsuarios.setText("CADASTRO DE USUARIO");
+        tituloUsuarios.setText("CADASTRO DE EQUIPAMENTOS");
 
-        comboNivelUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<-- Selecione -->", "Masculino", "Feminino" }));
+        comboNivelUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<-- Selecione -->", "001 - Powerfit" }));
         comboNivelUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboNivelUsuarioActionPerformed(evt);
             }
         });
 
-        labelSenha.setText("Senha:");
-
         labelCodUsuario.setText("Código:");
 
         codUsuario.setEditable(false);
 
-        labelUsuario.setText("Usuário:");
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        labelEmailUsuario1.setText("Marca:");
+
+        labelEmailUsuario2.setText("Modelo:");
+
+        comboNivelUsuario1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<-- Selecione -->", "001 - Academia" }));
+        comboNivelUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboNivelUsuario1ActionPerformed(evt);
+            }
+        });
+
+        labeAcessoUsuario1.setText("Tipo:");
+
+        labeAcessoUsuario2.setText("Observações:");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -155,48 +174,51 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
                 .addComponent(btFecharTelaUsuario)
                 .addContainerGap())
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addGap(95, 95, 95)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tituloUsuarios)
-                        .addGap(166, 166, 166))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(btLimparUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btSalvarUsuario))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(125, 125, 125))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labeAcessoUsuario)
                             .addComponent(labelCodUsuario)
                             .addComponent(labelNomeUsuario)
-                            .addComponent(labelEmailUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelEmailUsuario)
+                            .addComponent(labeAcessoUsuario2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(codUsuario)
-                                .addGap(335, 335, 335)
-                                .addComponent(checkAtivoUsuario))
-                            .addComponent(campoEmailUsuario)
-                            .addComponent(campoNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(labeAcessoUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(comboNivelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(343, 343, 343))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(labelUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(labelSenha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                                    .addComponent(btLimparUsuario)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btSalvarUsuario))
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator1)
+                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                    .addComponent(codUsuario)
+                                    .addGap(335, 335, 335)
+                                    .addComponent(checkAtivoUsuario))
+                                .addComponent(campoNomeUsuario, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
+                                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(labelEmailUsuario1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelEmailUsuario2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                    .addComponent(comboNivelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(labeAcessoUsuario1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(comboNivelUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
@@ -204,7 +226,7 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btFecharTelaUsuario)
-                .addGap(53, 53, 53)
+                .addGap(34, 34, 34)
                 .addComponent(tituloUsuarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,35 +242,36 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
                     .addComponent(campoNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelNomeUsuario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoEmailUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelEmailUsuario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelEmailUsuario)
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelEmailUsuario1)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelEmailUsuario2))
+                .addGap(14, 14, 14)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labeAcessoUsuario)
-                    .addComponent(comboNivelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboNivelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labeAcessoUsuario1)
+                    .addComponent(comboNivelUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelSenha)
-                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelUsuario)
-                    .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labeAcessoUsuario2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvarUsuario)
                     .addComponent(btLimparUsuario))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jDesktopPane1.setLayer(btFecharTelaUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelNomeUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoNomeUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jSeparator1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jSeparator2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(campoEmailUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btSalvarUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelEmailUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btLimparUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -256,13 +279,17 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(labeAcessoUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(tituloUsuarios, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(comboNivelUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(labelSenha, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelCodUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(codUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jSeparator3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(campoUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(labelUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(campoSenha, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jFormattedTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(labelEmailUsuario1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(labelEmailUsuario2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jTextField2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(comboNivelUsuario1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(labeAcessoUsuario1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(labeAcessoUsuario2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -286,37 +313,41 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_btFecharTelaUsuarioMouseClicked
 
-    private void campoEmailUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEmailUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoEmailUsuarioActionPerformed
-
     private void btLimparUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparUsuarioActionPerformed
 
 
     }//GEN-LAST:event_btLimparUsuarioActionPerformed
+
+    private void comboNivelUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboNivelUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboNivelUsuario1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btFecharTelaUsuario;
     private javax.swing.JButton btLimparUsuario;
     private javax.swing.JButton btSalvarUsuario;
-    private javax.swing.JTextField campoEmailUsuario;
     private javax.swing.JTextField campoNomeUsuario;
-    private javax.swing.JPasswordField campoSenha;
-    private javax.swing.JTextField campoUsuario;
     private javax.swing.JCheckBox checkAtivoUsuario;
     private javax.swing.JTextField codUsuario;
     private javax.swing.JComboBox comboNivelUsuario;
+    private javax.swing.JComboBox comboNivelUsuario1;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel labeAcessoUsuario;
+    private javax.swing.JLabel labeAcessoUsuario1;
+    private javax.swing.JLabel labeAcessoUsuario2;
     private javax.swing.JLabel labelCodUsuario;
     private javax.swing.JLabel labelEmailUsuario;
+    private javax.swing.JLabel labelEmailUsuario1;
+    private javax.swing.JLabel labelEmailUsuario2;
     private javax.swing.JLabel labelNomeUsuario;
-    private javax.swing.JLabel labelSenha;
-    private javax.swing.JLabel labelUsuario;
     private javax.swing.JLabel tituloUsuarios;
     // End of variables declaration//GEN-END:variables
 }

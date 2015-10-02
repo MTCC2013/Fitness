@@ -179,7 +179,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="373" max="32767" attributes="0"/>
-                  <Component id="logotipoCentral" min="-2" max="-2" attributes="0"/>
+                  <Component id="logotipoCentral" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="353" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -208,15 +208,14 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Icones/LogoPequeno.jpg"/>
             </Property>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor Padr&#xe3;o"/>
+            </Property>
+            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="logotipoCentral"/>
-            </Property>
+            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
           </AccessibilityProperties>
-          <AuxValues>
-            <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="400"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="labelPop">
           <Properties>

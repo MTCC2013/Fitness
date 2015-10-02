@@ -12,29 +12,28 @@
 package Classes;
 
 //Importações
+import Implementacao.EquipamentoIFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
-public class EquipamentoActionListener implements ActionListener {
+public class EquipamentoActionListener implements ActionListener {   
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    private EquipamentoIFrame frameEquipamento;
 
-    //private EquipamentoIFrame frameEquipamento;
-
-    /*public EquipamentoActionListener(EquipamentoIFrame frameEquipamento) {
+    public EquipamentoActionListener(EquipamentoIFrame frameEquipamento) {
         this.frameEquipamento = frameEquipamento;
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if ("salvar".equals(e.getActionCommand())) {
+     @Override
+    public void actionPerformed(ActionEvent ae) {
+        
+        if("salvar".equals(ae.getActionCommand())) {
             Equipamento e = frameEquipamento.getEquipamento();
             JOptionPane.showMessageDialog(frameEquipamento, "Dados cadastrados!");
-        } else if ("limpar".equals(e.getActionCommand())) {
-            JOptionPane.showMessageDialog(frameEquipamento, "Clicou em cancelar!");
-        }
-    }*/
+        } else if("limpar".equals(ae.getActionCommand())) {
+            Equipamento e = frameEquipamento.setEquipamento();
+            JOptionPane.showMessageDialog(frameEquipamento, "Ok!");
+        }       
+    }   
 }

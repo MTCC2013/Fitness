@@ -15,7 +15,6 @@ package Implementacao;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.net.URL;
 import javax.swing.JOptionPane;
@@ -78,6 +77,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
         painelBackground.setOpaque(true);
 
         logotipoCentral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/LogoPequeno.jpg"))); // NOI18N
+        logotipoCentral.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logotipoCentral.setOpaque(true);
 
         labelPop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/pop.png"))); // NOI18N
         labelPop.setToolTipText("Manual de Instruções (HELP)");
@@ -130,9 +131,9 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addComponent(labelInfo)))
                 .addContainerGap())
         );
-        painelBackground.setLayer(logotipoCentral, javax.swing.JLayeredPane.DRAG_LAYER);
+        painelBackground.setLayer(logotipoCentral, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        logotipoCentral.getAccessibleContext().setAccessibleParent(logotipoCentral);
+        logotipoCentral.getAccessibleContext().setAccessibleDescription("");
         painelBackground.setLayer(labelPop, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelBackground.setLayer(labelInfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         painelBackground.setLayer(labelInformacao, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -275,7 +276,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_clienteActionPerformed
 
     private void labelPopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPopMouseClicked
-        File pdf = new File("C:\\Users\\Mauricio\\Desktop\\Projeto Tópicos\\sofitness\\src\\Documents\\MANUAL DE INSTRUÇÕES SOFTNESS.pdf");
+        File pdf = new File("./src/Documents/MANUAL DE INSTRUÇÕES SOFTNESS.pdf");
         try {
             Desktop.getDesktop().open(pdf);
         } catch (Exception ex) {
@@ -317,7 +318,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
     private void equipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipamentoActionPerformed
         // Chama a tela de Cadastro de Equipamento
-        EquipamentosIFrame equi = new EquipamentosIFrame();
+        EquipamentoIFrame equi = new EquipamentoIFrame();
         painelBackground.add(equi);
         equi.setVisible(true);
     }//GEN-LAST:event_equipamentoActionPerformed
