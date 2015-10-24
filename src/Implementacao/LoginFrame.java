@@ -12,20 +12,33 @@
 package Implementacao;
 
 //Importações
-import Backup.*;
-import Implementacao.*;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.IOException;
 import java.net.URL;
 import javax.swing.JOptionPane;
+import Classes.Log;
+import Classes.Login;
 
 //Classe Login
 public class LoginFrame extends javax.swing.JFrame {
+    
+    public Login getLogin() {
+        Login l = new Login();
+        l.setLgn_usuario(campoUsuarioLogin.getText());
+        l.setLgn_senha(campoSenhaLogin.getText());
+        return l;
+    }
 
+    public Login setLogin() {
+        Login l = new Login();
+        return l;
+    }
+    
     public LoginFrame() {
 
         initComponents();
-
+        
         //Caracteristicas da Janela
         setResizable(false);
         setVisible(true);
@@ -35,7 +48,7 @@ public class LoginFrame extends javax.swing.JFrame {
         URL url = this.getClass().getResource("/Icones/iconeArea.png");
         Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(imagemTitulo);
-    }
+    }   
 
     //Código Drag and Drop
     @SuppressWarnings("unchecked")
@@ -166,8 +179,25 @@ public class LoginFrame extends javax.swing.JFrame {
             this.dispose();
             PrincipalFrame principal = new PrincipalFrame();
             principal.setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(rootPane, "Usuário ou/e Senha Incorreto!");
+            
+            //Gera Log
+            try {
+                String vmsg = "O Usuário " + campoUsuarioLogin.getText() + " acessou o sistema.";             
+                Log.Log(vmsg,"./src/Logs/Softness_log.txt");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Usuário ou/e Senha Incorreto!");   
+            
+            //Gera Log
+            try {
+                String vmsg = "O Usuário " + campoUsuarioLogin.getText() + " informou a Senha ou/e Usuário incorreto(s).";             
+                Log.Log(vmsg,"./src/Logs/Softness_log.txt");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }//GEN-LAST:event_botaoAcessarLoginActionPerformed
 
@@ -200,13 +230,6 @@ public class LoginFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(LoginFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -219,7 +242,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JButton botaoAcessarLogin;
     private javax.swing.JButton botaoCancelarLogin;
     private javax.swing.JPasswordField campoSenhaLogin;
-    private javax.swing.JTextField campoUsuarioLogin;
+    public javax.swing.JTextField campoUsuarioLogin;
     private javax.swing.JLabel labelSenhaLogin;
     private javax.swing.JLabel labelUsuarioLogin1;
     private javax.swing.JLabel logotipoLogin;

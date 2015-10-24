@@ -20,6 +20,8 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
 
     public Cliente getCliente() {
         Cliente c = new Cliente();
+        //c.setCli_codigo(Integer.valueOf(campoCodigo.getText()));
+        c.setCli_descricao(campoNome.getText());
         return c;
     }
 
@@ -103,6 +105,11 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         //Nova ActionListener
         btSalvarUsuario.addActionListener(listenerusuario);
         btSalvarUsuario.setActionCommand("salvar");
+        btSalvarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalvarUsuarioActionPerformed(evt);
+            }
+        });
 
         btLimparUsuario.setBackground(new java.awt.Color(0, 51, 102));
         btLimparUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -377,6 +384,10 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
     private void selectTpclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectTpclienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_selectTpclienteActionPerformed
+
+    private void btSalvarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSalvarUsuarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

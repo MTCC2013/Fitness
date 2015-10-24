@@ -18,6 +18,7 @@ import java.awt.Toolkit;
 import java.io.File;
 import java.net.URL;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 //Classe Principal
 public class PrincipalFrame extends javax.swing.JFrame {
@@ -261,8 +262,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
 
         //Verifica se o usuário deseja mesmo sair
-        int aux = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "SAIR", JOptionPane.YES_NO_OPTION);
-
+        int aux = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "SAIR - Softness", JOptionPane.YES_NO_OPTION);
+       
         if (aux == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
