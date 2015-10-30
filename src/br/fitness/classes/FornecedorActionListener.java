@@ -1,7 +1,7 @@
 /*--------------------------- Softness ---------------------------------------
  Rotina: Classes
- Descrição: Classe Professor
- Fonte: ProfessorActionListener.java
+ Descrição: Classe com ActionListener Fornecedor
+ Fonte: FornecedorActionListener.java
  @utor: Daiara Paes da Rosa
  Observação: 
  ---------------------------- Alteração ---------------------------------------
@@ -9,29 +9,29 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacotes
-package Classes;
+package br.fitness.classes;
 
 //Importações
-import Implementacao.ProfessorIFrame;
+import br.fitness.implementacao.FornecedorIFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-public class ProfessorActionListener implements ActionListener {
+public class FornecedorActionListener implements ActionListener {
 
-    private ProfessorIFrame frameProfessor;
+    private FornecedorIFrame frameFornecedor;
 
-    public ProfessorActionListener(ProfessorIFrame frameProfessor) {
-        this.frameProfessor = frameProfessor;
+    public FornecedorActionListener(FornecedorIFrame frameFornecedor) {
+        this.frameFornecedor = frameFornecedor;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if ("salvar".equals(e.getActionCommand())) {
-            Professor p = frameProfessor.getProfessor();
-            JOptionPane.showMessageDialog(frameProfessor, "Dados cadastrados!");
+            Fornecedor f = frameFornecedor.getFornecedor();
+            JOptionPane.showMessageDialog(frameFornecedor, "Dados cadastrados!");
         } else if ("limpar".equals(e.getActionCommand())) {
-            JOptionPane.showMessageDialog(frameProfessor, "Clicou em cancelar!");
+            JOptionPane.showMessageDialog(frameFornecedor, "Clicou em cancelar!");
         }
     }
 }

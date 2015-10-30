@@ -1,7 +1,7 @@
 /*--------------------------- Softness ---------------------------------------
  Rotina: Classes
- Descrição: Classe Usuario
- Fonte: UsuarioActionListener.java
+ Descrição: Classe com ActionListener Equipamento
+ Fonte: EquipamentoActionListener.java
  @utor: Mayara Freitas de Oliveira
  Observação: 
  ---------------------------- Alteração ---------------------------------------
@@ -9,31 +9,31 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacotes
-package Classes;
+package br.fitness.classes;
 
 //Importações
-import Implementacao.UsuarioIFrame;
+import br.fitness.implementacao.EquipamentoIFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-public class UsuarioActionListener implements ActionListener {
-       
-    private UsuarioIFrame frameUsuario;
-    
-    public UsuarioActionListener (UsuarioIFrame frameUsuario){
-        this.frameUsuario = frameUsuario;    
+public class EquipamentoActionListener implements ActionListener {   
+
+    private EquipamentoIFrame frameEquipamento;
+
+    public EquipamentoActionListener(EquipamentoIFrame frameEquipamento) {
+        this.frameEquipamento = frameEquipamento;
     }
-    
-    @Override
+
+     @Override
     public void actionPerformed(ActionEvent ae) {
         
         if("salvar".equals(ae.getActionCommand())) {
-            Usuario u = frameUsuario.getUsuario();
-            JOptionPane.showMessageDialog(frameUsuario, "Dados cadastrados!");
+            Equipamento e = frameEquipamento.getEquipamento();
+            JOptionPane.showMessageDialog(frameEquipamento, "Dados cadastrados!");
         } else if("limpar".equals(ae.getActionCommand())) {
-            Usuario u = frameUsuario.setUsuario();
-            JOptionPane.showMessageDialog(frameUsuario, "Ok!");
+            Equipamento e = frameEquipamento.setEquipamento();
+            JOptionPane.showMessageDialog(frameEquipamento, "Ok!");
         }       
-    }    
+    }   
 }

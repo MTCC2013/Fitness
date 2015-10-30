@@ -9,7 +9,7 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacotes
-package Classes;
+package br.fitness.classes;
 
 //Importações
 import java.io.FileOutputStream;

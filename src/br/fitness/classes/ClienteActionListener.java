@@ -9,11 +9,11 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacotes
-package Classes;
+package br.fitness.classes;
 
 //Importações
-import Implementacao.ClienteIFrame;
-import Implementacao.LoginFrame;
+import br.fitness.implementacao.ClienteIFrame;
+import br.fitness.implementacao.LoginFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;

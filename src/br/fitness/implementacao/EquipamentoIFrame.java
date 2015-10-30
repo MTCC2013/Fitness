@@ -9,10 +9,10 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacote
-package Implementacao;
+package br.fitness.implementacao;
 
-import Classes.Equipamento;
-import Classes.EquipamentoActionListener;
+import br.fitness.classes.Equipamento;
+import br.fitness.classes.EquipamentoActionListener;
 
 public class EquipamentoIFrame extends javax.swing.JInternalFrame {
 

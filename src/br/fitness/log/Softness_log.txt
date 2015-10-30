@@ -1,0 +1,13 @@
+Fri Oct 23 22:12:52 BRST 2015 : O Usuário admin acessou o sistema.
+Fri Oct 23 22:13:01 BRST 2015 : O Usuário cadastrou um novo cliente:  Mauricio Cardoso
+Fri Oct 30 19:11:12 BRST 2015 : O Usuário admin acessou o sistema.
+Fri Oct 30 20:43:34 BRST 2015 : O usuariomauricio acessou o sistema.
+Fri Oct 30 20:46:13 BRST 2015 : usuario e/ou senha invalida!
+Fri Oct 30 20:46:19 BRST 2015 : usuario e/ou senha invalida!
+Fri Oct 30 20:47:07 BRST 2015 : usuario e/ou senha invalida!
+Fri Oct 30 20:47:49 BRST 2015 : usuario e/ou senha invalida!
+Fri Oct 30 20:47:57 BRST 2015 : usuario e/ou senha invalida!
+Fri Oct 30 20:50:54 BRST 2015 : O usuariomauricio acessou o sistema.
+Fri Oct 30 20:51:13 BRST 2015 : usuario e/ou senha invalida!
+Fri Oct 30 20:52:27 BRST 2015 : usuario e/ou senha invalida!
+Fri Oct 30 20:52:30 BRST 2015 : usuario e/ou senha invalida!

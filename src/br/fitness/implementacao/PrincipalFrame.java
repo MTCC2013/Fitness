@@ -9,7 +9,7 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacote
-package Implementacao;
+package br.fitness.implementacao;
 
 //Importações
 import java.awt.Desktop;

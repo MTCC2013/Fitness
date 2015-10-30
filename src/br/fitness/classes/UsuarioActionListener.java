@@ -1,7 +1,7 @@
 /*--------------------------- Softness ---------------------------------------
  Rotina: Classes
- Descrição: Classe com ActionListener Equipamento
- Fonte: EquipamentoActionListener.java
+ Descrição: Classe Usuario
+ Fonte: UsuarioActionListener.java
  @utor: Mayara Freitas de Oliveira
  Observação: 
  ---------------------------- Alteração ---------------------------------------
@@ -9,31 +9,31 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacotes
-package Classes;
+package br.fitness.classes;
 
 //Importações
-import Implementacao.EquipamentoIFrame;
+import br.fitness.implementacao.UsuarioIFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-public class EquipamentoActionListener implements ActionListener {   
-
-    private EquipamentoIFrame frameEquipamento;
-
-    public EquipamentoActionListener(EquipamentoIFrame frameEquipamento) {
-        this.frameEquipamento = frameEquipamento;
+public class UsuarioActionListener implements ActionListener {
+       
+    private UsuarioIFrame frameUsuario;
+    
+    public UsuarioActionListener (UsuarioIFrame frameUsuario){
+        this.frameUsuario = frameUsuario;    
     }
-
-     @Override
+    
+    @Override
     public void actionPerformed(ActionEvent ae) {
         
         if("salvar".equals(ae.getActionCommand())) {
-            Equipamento e = frameEquipamento.getEquipamento();
-            JOptionPane.showMessageDialog(frameEquipamento, "Dados cadastrados!");
+            Usuario u = frameUsuario.getUsuario();
+            JOptionPane.showMessageDialog(frameUsuario, "Dados cadastrados!");
         } else if("limpar".equals(ae.getActionCommand())) {
-            Equipamento e = frameEquipamento.setEquipamento();
-            JOptionPane.showMessageDialog(frameEquipamento, "Ok!");
+            Usuario u = frameUsuario.setUsuario();
+            JOptionPane.showMessageDialog(frameUsuario, "Ok!");
         }       
-    }   
+    }    
 }

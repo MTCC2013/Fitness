@@ -9,10 +9,10 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacote
-package Implementacao;
+package br.fitness.implementacao;
 
-import Classes.Cliente;
-import Classes.ClienteActionListener;
+import br.fitness.classes.Cliente;
+import br.fitness.classes.ClienteActionListener;
 
 public class ClienteIFrame extends javax.swing.JInternalFrame {
 

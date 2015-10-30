@@ -9,10 +9,10 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacote
-package Implementacao;
+package br.fitness.implementacao;
 
-import Classes.Professor;
-import Classes.ProfessorActionListener;
+import br.fitness.classes.Professor;
+import br.fitness.classes.ProfessorActionListener;
 
 public class ProfessorIFrame extends javax.swing.JInternalFrame {
 

@@ -9,10 +9,10 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacote
-package Implementacao;
+package br.fitness.implementacao;
 
-import Classes.Usuario;
-import Classes.UsuarioActionListener;
+import br.fitness.classes.Usuario;
+import br.fitness.classes.UsuarioActionListener;
 
 public class UsuarioIFrame extends javax.swing.JInternalFrame {
 

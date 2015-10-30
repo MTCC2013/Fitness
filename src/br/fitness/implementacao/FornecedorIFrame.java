@@ -9,10 +9,10 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacote
-package Implementacao;
+package br.fitness.implementacao;
 
-import Classes.Fornecedor;
-import Classes.FornecedorActionListener;
+import br.fitness.classes.Fornecedor;
+import br.fitness.classes.FornecedorActionListener;
 
 public class FornecedorIFrame extends javax.swing.JInternalFrame {
 

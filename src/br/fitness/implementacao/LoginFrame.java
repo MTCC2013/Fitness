@@ -9,19 +9,19 @@
  -------- -------------- ------------------------------------------------------
  ------------------------------------------------------------------------------*/
 //Pacote
-package Implementacao;
+package br.fitness.implementacao;
 
 //Importações
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.io.IOException;
 import java.net.URL;
-import javax.swing.JOptionPane;
-import Classes.Log;
-import Classes.Login;
+import br.fitness.classes.Login;
+import br.fitness.classes.LoginActionListener;
 
 //Classe Login
 public class LoginFrame extends javax.swing.JFrame {
+
+    private LoginActionListener listenerlogin = new LoginActionListener(this);
     
     public Login getLogin() {
         Login l = new Login();
@@ -34,11 +34,11 @@ public class LoginFrame extends javax.swing.JFrame {
         Login l = new Login();
         return l;
     }
-    
+
     public LoginFrame() {
 
         initComponents();
-        
+
         //Caracteristicas da Janela
         setResizable(false);
         setVisible(true);
@@ -48,7 +48,7 @@ public class LoginFrame extends javax.swing.JFrame {
         URL url = this.getClass().getResource("/Icones/iconeArea.png");
         Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(imagemTitulo);
-    }   
+    }
 
     //Código Drag and Drop
     @SuppressWarnings("unchecked")
@@ -84,6 +84,9 @@ public class LoginFrame extends javax.swing.JFrame {
         botaoAcessarLogin.setText("Acessar");
         botaoAcessarLogin.setContentAreaFilled(false);
         botaoAcessarLogin.setOpaque(true);
+        //Nova ActionListener
+        botaoAcessarLogin.addActionListener(listenerlogin);
+        botaoAcessarLogin.setActionCommand("acessar");
         botaoAcessarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAcessarLoginActionPerformed(evt);
@@ -100,6 +103,9 @@ public class LoginFrame extends javax.swing.JFrame {
         botaoCancelarLogin.setText("Cancelar");
         botaoCancelarLogin.setContentAreaFilled(false);
         botaoCancelarLogin.setOpaque(true);
+        //Nova ActionListener
+        botaoCancelarLogin.addActionListener(listenerlogin);
+        botaoCancelarLogin.setActionCommand("cancelar");
         botaoCancelarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCancelarLoginActionPerformed(evt);
@@ -175,30 +181,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCancelarLoginActionPerformed
 
     private void botaoAcessarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAcessarLoginActionPerformed
-        if (campoUsuarioLogin.getText().equals("admin") && campoSenhaLogin.getText().equals("=c2pefagro14")) {
-            this.dispose();
-            PrincipalFrame principal = new PrincipalFrame();
-            principal.setVisible(true);
-            
-            //Gera Log
-            try {
-                String vmsg = "O Usuário " + campoUsuarioLogin.getText() + " acessou o sistema.";             
-                Log.Log(vmsg,"./src/Logs/Softness_log.txt");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Usuário ou/e Senha Incorreto!");   
-            
-            //Gera Log
-            try {
-                String vmsg = "O Usuário " + campoUsuarioLogin.getText() + " informou a Senha ou/e Usuário incorreto(s).";             
-                Log.Log(vmsg,"./src/Logs/Softness_log.txt");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        
     }//GEN-LAST:event_botaoAcessarLoginActionPerformed
 
     private void botaoAcessarLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botaoAcessarLoginKeyPressed
@@ -242,7 +225,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JButton botaoAcessarLogin;
     private javax.swing.JButton botaoCancelarLogin;
     private javax.swing.JPasswordField campoSenhaLogin;
-    public javax.swing.JTextField campoUsuarioLogin;
+    private javax.swing.JTextField campoUsuarioLogin;
     private javax.swing.JLabel labelSenhaLogin;
     private javax.swing.JLabel labelUsuarioLogin1;
     private javax.swing.JLabel logotipoLogin;
