@@ -77,9 +77,6 @@ public class ConfigFrame extends javax.swing.JFrame {
         botaoAcessarLogin.setText("Acessar");
         botaoAcessarLogin.setContentAreaFilled(false);
         botaoAcessarLogin.setOpaque(true);
-        //Nova ActionListener
-        botaoAcessarLogin.addActionListener(listenerlogin);
-        botaoAcessarLogin.setActionCommand("acessar");
         botaoAcessarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAcessarLoginActionPerformed(evt);
@@ -96,9 +93,6 @@ public class ConfigFrame extends javax.swing.JFrame {
         botaoCancelarLogin.setText("Cancelar");
         botaoCancelarLogin.setContentAreaFilled(false);
         botaoCancelarLogin.setOpaque(true);
-        //Nova ActionListener
-        botaoCancelarLogin.addActionListener(listenerlogin);
-        botaoCancelarLogin.setActionCommand("cancelar");
         botaoCancelarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCancelarLoginActionPerformed(evt);
