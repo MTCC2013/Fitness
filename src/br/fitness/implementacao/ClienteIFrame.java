@@ -16,7 +16,7 @@ import br.fitness.classes.ClienteActionListener;
 
 public class ClienteIFrame extends javax.swing.JInternalFrame {
 
-    private ClienteActionListener listenerusuario = new ClienteActionListener(this);
+    private ClienteActionListener listenercliente = new ClienteActionListener(this);
 
     public Cliente getCliente() {
         Cliente c = new Cliente();
@@ -31,8 +31,8 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
     }
 
     public ClienteIFrame() {
-        initComponents();
-
+        initComponents();       
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows".equals(info.getName())) {
@@ -52,7 +52,6 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        btFecharTelaUsuario = new javax.swing.JLabel();
         btSalvarUsuario = new javax.swing.JButton();
         btLimparUsuario = new javax.swing.JButton();
         labelRG = new javax.swing.JLabel();
@@ -61,7 +60,6 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         selectTpcliente = new javax.swing.JComboBox();
         campoCodigo = new javax.swing.JTextField();
         labelCPF = new javax.swing.JLabel();
-        labelTitulo = new javax.swing.JLabel();
         campoCPF = new javax.swing.JFormattedTextField();
         campoNome = new javax.swing.JTextField();
         labelTpcliente = new javax.swing.JLabel();
@@ -73,7 +71,6 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         campoRG = new javax.swing.JFormattedTextField();
         labelCelular = new javax.swing.JLabel();
         campoEmail = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         labelCodigo = new javax.swing.JLabel();
         selectSexo = new javax.swing.JComboBox();
@@ -81,21 +78,18 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         labelEmail = new javax.swing.JLabel();
         campoCelular = new javax.swing.JFormattedTextField();
         labelEndereco = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        labelUsuarioLogin1 = new javax.swing.JLabel();
+        btFecharTelaUsuario = new javax.swing.JLabel();
 
+        setBorder(null);
         setResizable(true);
-        setTitle("Cadastro de Usuários");
+        setTitle("Softness.Cadastros");
         setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        setPreferredSize(new java.awt.Dimension(840, 471));
+        setRequestFocusEnabled(false);
+        setVisible(true);
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
-
-        btFecharTelaUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sair.png"))); // NOI18N
-        btFecharTelaUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btFecharTelaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btFecharTelaUsuarioMouseClicked(evt);
-            }
-        });
 
         btSalvarUsuario.setBackground(new java.awt.Color(0, 51, 102));
         btSalvarUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +97,7 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         btSalvarUsuario.setContentAreaFilled(false);
         btSalvarUsuario.setOpaque(true);
         //Nova ActionListener
-        btSalvarUsuario.addActionListener(listenerusuario);
+        btSalvarUsuario.addActionListener(listenercliente);
         btSalvarUsuario.setActionCommand("salvar");
         btSalvarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +111,7 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         btLimparUsuario.setContentAreaFilled(false);
         btLimparUsuario.setOpaque(true);
         //Nova ActionListener
-        btLimparUsuario.addActionListener(listenerusuario);
+        btLimparUsuario.addActionListener(listenercliente);
         btLimparUsuario.setActionCommand("limpar");
 
         /*
@@ -142,10 +136,6 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         campoCodigo.setEditable(false);
 
         labelCPF.setText("CPF:");
-
-        labelTitulo.setFont(new java.awt.Font("TEC-FONT D Helv", 1, 14)); // NOI18N
-        labelTitulo.setForeground(new java.awt.Color(0, 51, 102));
-        labelTitulo.setText("CADASTRO DE CLIENTE");
 
         try {
             campoCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##.")));
@@ -207,12 +197,8 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addGap(0, 798, Short.MAX_VALUE)
-                .addComponent(btFecharTelaUsuario)
-                .addContainerGap())
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(138, 138, 138)
+                .addGap(179, 179, 179)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(labelCodigo)
@@ -225,7 +211,6 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
                             .addComponent(labelDatanasc, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(campoCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoNome, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
@@ -262,24 +247,15 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(selectTpcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(labelTitulo)
-                        .addGap(135, 135, 135))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(btLimparUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btSalvarUsuario)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(183, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btFecharTelaUsuario)
-                .addGap(37, 37, 37)
-                .addComponent(labelTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(checkAtivo)
                     .addComponent(labelCodigo)
@@ -322,9 +298,8 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvarUsuario)
                     .addComponent(btLimparUsuario))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
-        jDesktopPane1.setLayer(btFecharTelaUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btSalvarUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btLimparUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelRG, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -333,7 +308,6 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(selectTpcliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoCodigo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelCPF, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(labelTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoCPF, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoNome, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelTpcliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -345,7 +319,6 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(campoRG, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelCelular, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jSeparator1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jSeparator2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelCodigo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(selectSexo, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -354,15 +327,55 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(campoCelular, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelEndereco, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
+        jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelUsuarioLogin1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelUsuarioLogin1.setForeground(new java.awt.Color(255, 255, 255));
+        labelUsuarioLogin1.setText("Cadastro de Clientes");
+
+        btFecharTelaUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fitness/icon/sair.png"))); // NOI18N
+        btFecharTelaUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFecharTelaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btFecharTelaUsuarioMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelUsuarioLogin1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btFecharTelaUsuario)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(labelUsuarioLogin1, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                    .addComponent(btFecharTelaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jDesktopPane1))
         );
 
         pack();
@@ -405,7 +418,7 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField campoTelefone;
     private javax.swing.JCheckBox checkAtivo;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel labelCPF;
     private javax.swing.JLabel labelCelular;
@@ -416,8 +429,8 @@ public class ClienteIFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel labelNome;
     private javax.swing.JLabel labelRG;
     private javax.swing.JLabel labelTelefone;
-    private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelTpcliente;
+    private javax.swing.JLabel labelUsuarioLogin1;
     private javax.swing.JComboBox selectSexo;
     private javax.swing.JComboBox selectTpcliente;
     private javax.swing.JLabel sexoLabel;

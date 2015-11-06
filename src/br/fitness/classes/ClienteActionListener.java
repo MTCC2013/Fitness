@@ -39,26 +39,32 @@ public class ClienteActionListener implements ActionListener {
             //Verifica Descrição do cliente
             if ("".equals(c.getCli_descricao())) {
                 //Gera Log
-                String vmsg = "O usuário não informou o nome do cliente ";
+                String vmsg = "O usuario não informou o nome do cliente.";
                 try {
-                    Log.Log(vmsg, "./src/Logs/Softness_log.txt");
+                    Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
                 } catch (IOException ex) {
                     Logger.getLogger(ClienteActionListener.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 
-            JOptionPane.showMessageDialog(frameCliente, "Dados cadastrados!");
+            JOptionPane.showMessageDialog(frameCliente, "Dados cadastrados com sucesso!");
 
             //Gera Log
-            String vmsg = "O Usuário cadastrou um novo cliente:  " + c.getCli_descricao();
+            String vmsg = "O usuario cadastrou um novo cliente: " + c.getCli_descricao();
             try {
-                Log.Log(vmsg, "./src/Logs/Softness_log.txt");
+                Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ClienteActionListener.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } else if ("limpar".equals(e.getActionCommand())) {
-            JOptionPane.showMessageDialog(frameCliente, "Clicou em cancelar!");
+            //Gera Log
+            String vmsg = "O usuario limpou os dados da tela de Clientes!";
+            try {
+                Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ClienteActionListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }

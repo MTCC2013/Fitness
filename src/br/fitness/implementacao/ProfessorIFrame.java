@@ -16,7 +16,7 @@ import br.fitness.classes.ProfessorActionListener;
 
 public class ProfessorIFrame extends javax.swing.JInternalFrame {
 
-    private ProfessorActionListener listenerusuario = new ProfessorActionListener(this);
+    private ProfessorActionListener listenerprofessor = new ProfessorActionListener(this);
 
     public Professor getProfessor() {
         Professor p = new Professor();
@@ -50,7 +50,6 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        btFecharTelaUsuario = new javax.swing.JLabel();
         btSalvarUsuario = new javax.swing.JButton();
         btLimparUsuario = new javax.swing.JButton();
         labelEndereco2 = new javax.swing.JLabel();
@@ -63,11 +62,9 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         labelEmail = new javax.swing.JLabel();
         labelCPF = new javax.swing.JLabel();
         campoRG = new javax.swing.JFormattedTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         selectSexo2 = new javax.swing.JComboBox();
         labelCodigo = new javax.swing.JLabel();
-        labelTitulo = new javax.swing.JLabel();
         labelEndereco1 = new javax.swing.JLabel();
         labelEndereco3 = new javax.swing.JLabel();
         campoTelefone = new javax.swing.JFormattedTextField();
@@ -83,21 +80,16 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         campoEndereco = new javax.swing.JTextField();
         selectSexo = new javax.swing.JComboBox();
         campoCelular = new javax.swing.JFormattedTextField();
+        jPanel5 = new javax.swing.JPanel();
+        labelUsuarioLogin5 = new javax.swing.JLabel();
+        btFecharTelaUsuario5 = new javax.swing.JLabel();
 
+        setBorder(null);
         setResizable(true);
-        setTitle("Cadastro de Professores");
+        setTitle("Softness.Cadastros");
         setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        setPreferredSize(new java.awt.Dimension(840, 471));
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
-
-        btFecharTelaUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sair.png"))); // NOI18N
-        btFecharTelaUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btFecharTelaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btFecharTelaUsuarioMouseClicked(evt);
-            }
-        });
 
         btSalvarUsuario.setBackground(new java.awt.Color(0, 51, 102));
         btSalvarUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,7 +97,7 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         btSalvarUsuario.setContentAreaFilled(false);
         btSalvarUsuario.setOpaque(true);
         //Nova ActionListener
-        btSalvarUsuario.addActionListener(listenerusuario);
+        btSalvarUsuario.addActionListener(listenerprofessor);
         btSalvarUsuario.setActionCommand("salvar");
 
         btLimparUsuario.setBackground(new java.awt.Color(0, 51, 102));
@@ -114,7 +106,7 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         btLimparUsuario.setContentAreaFilled(false);
         btLimparUsuario.setOpaque(true);
         //Nova ActionListener
-        btLimparUsuario.addActionListener(listenerusuario);
+        btLimparUsuario.addActionListener(listenerprofessor);
         btLimparUsuario.setActionCommand("limpar");
 
         /*
@@ -173,10 +165,6 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         });
 
         labelCodigo.setText("Código:");
-
-        labelTitulo.setFont(new java.awt.Font("TEC-FONT D Helv", 1, 14)); // NOI18N
-        labelTitulo.setForeground(new java.awt.Color(0, 51, 102));
-        labelTitulo.setText("CADASTRO DE PROFESSOR");
 
         labelEndereco1.setText("Carga Horária:");
 
@@ -243,16 +231,49 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
             }
         });
 
+        jPanel5.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel5.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelUsuarioLogin5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelUsuarioLogin5.setForeground(new java.awt.Color(255, 255, 255));
+        labelUsuarioLogin5.setText("Cadastro de Professor");
+
+        btFecharTelaUsuario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fitness/icon/sair.png"))); // NOI18N
+        btFecharTelaUsuario5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFecharTelaUsuario5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btFecharTelaUsuario5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelUsuarioLogin5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 702, Short.MAX_VALUE)
+                .addComponent(btFecharTelaUsuario5)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btFecharTelaUsuario5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelUsuarioLogin5, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+                .addGap(7, 7, 7))
+        );
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(0, 798, Short.MAX_VALUE)
-                .addComponent(btFecharTelaUsuario)
-                .addContainerGap())
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(127, 127, 127)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,7 +309,6 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
                             .addComponent(labelNome))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(campoCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoNome, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
@@ -308,9 +328,6 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(btLimparUsuario)
@@ -323,13 +340,8 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btFecharTelaUsuario)
-                .addGap(30, 30, 30)
-                .addComponent(labelTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(checkAtivo)
                     .addComponent(labelCodigo)
@@ -384,9 +396,8 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvarUsuario)
                     .addComponent(btLimparUsuario))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jDesktopPane1.setLayer(btFecharTelaUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btSalvarUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btLimparUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelEndereco2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -399,11 +410,9 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(labelEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelCPF, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoRG, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jSeparator1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jSeparator2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(selectSexo2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelCodigo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(labelTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelEndereco1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelEndereco3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoTelefone, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -419,6 +428,7 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(campoEndereco, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(selectSexo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoCelular, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jPanel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -433,10 +443,6 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btFecharTelaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btFecharTelaUsuarioMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_btFecharTelaUsuarioMouseClicked
 
     private void btLimparUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparUsuarioActionPerformed
 
@@ -479,9 +485,13 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_selectSexo3ActionPerformed
 
+    private void btFecharTelaUsuario5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btFecharTelaUsuario5MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_btFecharTelaUsuario5MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btFecharTelaUsuario;
+    private javax.swing.JLabel btFecharTelaUsuario5;
     private javax.swing.JButton btLimparUsuario;
     private javax.swing.JButton btSalvarUsuario;
     private javax.swing.JFormattedTextField campoCPF;
@@ -495,7 +505,7 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField campoTelefone;
     private javax.swing.JCheckBox checkAtivo;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel labelCPF;
     private javax.swing.JLabel labelCelular;
@@ -510,7 +520,7 @@ public class ProfessorIFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel labelNome;
     private javax.swing.JLabel labelRG;
     private javax.swing.JLabel labelTelefone;
-    private javax.swing.JLabel labelTitulo;
+    private javax.swing.JLabel labelUsuarioLogin5;
     private javax.swing.JComboBox selectSexo;
     private javax.swing.JComboBox selectSexo1;
     private javax.swing.JComboBox selectSexo2;

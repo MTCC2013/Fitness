@@ -37,11 +37,11 @@ public class LoginActionListener implements ActionListener {
             Login l = frameLogin.getLogin();
 
             try {
-                if (confere(l.getLgn_usuario(), l.getLgn_senha(), new File(".src\\br\\fitness\\password\\" + l.getLgn_usuario() + ".txt"))) {
+                if (confere(l.getLgn_usuario(), l.getLgn_senha(), new File("./src/br/fitness/password/" + l.getLgn_usuario() + ".txt"))) {
                     //Gera Log
                     try {
-                        String vmsg = "O usuario" + l.getLgn_usuario() + " acessou o sistema.";
-                        Log.Log(vmsg, "./src/Logs/Softness_log.txt");
+                        String vmsg = "O usuario " + l.getLgn_usuario() + " acessou o sistema.";
+                        Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
                     } catch (IOException li) {
                         li.printStackTrace();
                     }
@@ -49,15 +49,16 @@ public class LoginActionListener implements ActionListener {
                     //Abre janela Principal
                     PrincipalFrame p = new PrincipalFrame();
                     p.setVisible(true);
+                    this.frameLogin.dispose();
         
                 } else {
-                    String vmsg = "usuario e/ou senha invalida!";
+                    String vmsg = "Usuario e/ou senha invalida!";
                     
                     JOptionPane.showMessageDialog(null, vmsg);
                     
                     //Gera Log
                     try {                        
-                        Log.Log(vmsg, "./src/Logs/Softness_log.txt");
+                        Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
                     } catch (IOException li) {
                         li.printStackTrace();
                     }
@@ -69,7 +70,7 @@ public class LoginActionListener implements ActionListener {
             //Gera Log
             try {
                 String vmsg = "O usuario cancelou o acesso ao sistema.";
-                Log.Log(vmsg, "./src/Logs/Softness_log.txt");
+                Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
             } catch (IOException l) {
                 l.printStackTrace();
             }
@@ -81,8 +82,6 @@ public class LoginActionListener implements ActionListener {
         p.load(new FileInputStream(arquivo));
         String usuarioLido = p.getProperty("usuario");
         String senhaLida = p.getProperty("senha");
-        JOptionPane.showMessageDialog(null, usuarioLido);
-        JOptionPane.showMessageDialog(null, senhaLida);
         return usuario.equals(usuarioLido) && senha.equals(senhaLida);
     }
 }

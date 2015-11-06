@@ -50,10 +50,8 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        btFecharTelaUsuario = new javax.swing.JLabel();
         labelNomeUsuario = new javax.swing.JLabel();
         campoNomeUsuario = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         campoEmailUsuario = new javax.swing.JTextField();
         btSalvarUsuario = new javax.swing.JButton();
@@ -61,7 +59,6 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         btLimparUsuario = new javax.swing.JButton();
         checkAtivoUsuario = new javax.swing.JCheckBox();
         labeAcessoUsuario = new javax.swing.JLabel();
-        tituloUsuarios = new javax.swing.JLabel();
         comboNivelUsuario = new javax.swing.JComboBox();
         labelSenha = new javax.swing.JLabel();
         labelCodUsuario = new javax.swing.JLabel();
@@ -70,21 +67,17 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         campoUsuario = new javax.swing.JTextField();
         labelUsuario = new javax.swing.JLabel();
         campoSenha = new javax.swing.JPasswordField();
+        jPanel5 = new javax.swing.JPanel();
+        labelUsuarioLogin5 = new javax.swing.JLabel();
+        btFecharTelaUsuario5 = new javax.swing.JLabel();
 
+        setBorder(null);
         setResizable(true);
-        setTitle("Cadastro de Usuários");
+        setTitle("Softness.Cadastros");
+        setToolTipText("");
         setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        setPreferredSize(new java.awt.Dimension(840, 471));
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
-
-        btFecharTelaUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sair.png"))); // NOI18N
-        btFecharTelaUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btFecharTelaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btFecharTelaUsuarioMouseClicked(evt);
-            }
-        });
 
         labelNomeUsuario.setText("Nome:");
 
@@ -127,10 +120,6 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
 
         labeAcessoUsuario.setText("Nível de Acesso:");
 
-        tituloUsuarios.setFont(new java.awt.Font("TEC-FONT D Helv", 1, 14)); // NOI18N
-        tituloUsuarios.setForeground(new java.awt.Color(0, 51, 102));
-        tituloUsuarios.setText("CADASTRO DE USUARIO");
-
         comboNivelUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<-- Selecione -->", "Masculino", "Feminino" }));
         comboNivelUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,20 +135,50 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
 
         labelUsuario.setText("Usuário:");
 
+        jPanel5.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel5.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelUsuarioLogin5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelUsuarioLogin5.setForeground(new java.awt.Color(255, 255, 255));
+        labelUsuarioLogin5.setText("Cadastro de Usuário");
+
+        btFecharTelaUsuario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fitness/icon/sair.png"))); // NOI18N
+        btFecharTelaUsuario5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFecharTelaUsuario5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btFecharTelaUsuario5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelUsuarioLogin5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btFecharTelaUsuario5)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btFecharTelaUsuario5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelUsuarioLogin5, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+                .addGap(7, 7, 7))
+        );
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addGap(0, 798, Short.MAX_VALUE)
-                .addComponent(btFecharTelaUsuario)
-                .addContainerGap())
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addGap(136, 136, 136)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(tituloUsuarios)
-                        .addGap(166, 166, 166))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(btLimparUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -171,7 +190,6 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
                             .addComponent(labelEmailUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(codUsuario)
                                 .addGap(335, 335, 335)
@@ -197,24 +215,20 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
                                 .addComponent(labelSenha)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btFecharTelaUsuario)
-                .addGap(53, 53, 53)
-                .addComponent(tituloUsuarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkAtivoUsuario))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(codUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelCodUsuario)))
+                    .addComponent(checkAtivoUsuario)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(codUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelCodUsuario))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,12 +255,10 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvarUsuario)
                     .addComponent(btLimparUsuario))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
-        jDesktopPane1.setLayer(btFecharTelaUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelNomeUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoNomeUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jSeparator1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jSeparator2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoEmailUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btSalvarUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -254,7 +266,6 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(btLimparUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(checkAtivoUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labeAcessoUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(tituloUsuarios, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(comboNivelUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelSenha, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelCodUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -263,6 +274,7 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(campoUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(labelUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(campoSenha, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jPanel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -282,10 +294,6 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboNivelUsuarioActionPerformed
 
-    private void btFecharTelaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btFecharTelaUsuarioMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_btFecharTelaUsuarioMouseClicked
-
     private void campoEmailUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEmailUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoEmailUsuarioActionPerformed
@@ -295,9 +303,13 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btLimparUsuarioActionPerformed
 
+    private void btFecharTelaUsuario5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btFecharTelaUsuario5MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_btFecharTelaUsuario5MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btFecharTelaUsuario;
+    private javax.swing.JLabel btFecharTelaUsuario5;
     private javax.swing.JButton btLimparUsuario;
     private javax.swing.JButton btSalvarUsuario;
     private javax.swing.JTextField campoEmailUsuario;
@@ -308,7 +320,7 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
     private javax.swing.JTextField codUsuario;
     private javax.swing.JComboBox comboNivelUsuario;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel labeAcessoUsuario;
@@ -317,6 +329,6 @@ public class UsuarioIFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel labelNomeUsuario;
     private javax.swing.JLabel labelSenha;
     private javax.swing.JLabel labelUsuario;
-    private javax.swing.JLabel tituloUsuarios;
+    private javax.swing.JLabel labelUsuarioLogin5;
     // End of variables declaration//GEN-END:variables
 }

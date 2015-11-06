@@ -45,7 +45,7 @@ public class LoginFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
         //Icone na janela   
-        URL url = this.getClass().getResource("/Icones/iconeArea.png");
+        URL url = this.getClass().getResource("/br/fitness/icon/iconeArea.png");
         Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(imagemTitulo);
     }
@@ -69,7 +69,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         painelBackground.setBackground(new java.awt.Color(255, 255, 255));
 
-        logotipoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/LogoPequeno.jpg"))); // NOI18N
+        logotipoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fitness/icon/LogoPequeno.jpg"))); // NOI18N
 
         labelSenhaLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelSenhaLogin.setText("Senha:");
@@ -119,7 +119,7 @@ public class LoginFrame extends javax.swing.JFrame {
         painelBackgroundLayout.setHorizontalGroup(
             painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBackgroundLayout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBackgroundLayout.createSequentialGroup()
                         .addComponent(botaoCancelarLogin)

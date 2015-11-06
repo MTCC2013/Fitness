@@ -23,7 +23,7 @@ public class ConfigFrame extends javax.swing.JFrame {
     public Login getLogin() {
         Login l = new Login();
         l.setLgn_usuario(campoUsuarioLogin.getText());
-        l.setLgn_senha(campoSenhaLogin.getText());
+
         return l;
     }
 
@@ -53,51 +53,22 @@ public class ConfigFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         painelBackground = new javax.swing.JPanel();
-        botaoAcessarLogin = new javax.swing.JButton();
-        botaoCancelarLogin = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         labelUsuarioLogin1 = new javax.swing.JLabel();
         campoUsuarioLogin = new javax.swing.JTextField();
         labelSenhaLogin = new javax.swing.JLabel();
         labelSenhaLogin1 = new javax.swing.JLabel();
-        campoSenhaLogin = new javax.swing.JPasswordField();
         labelSenhaLogin2 = new javax.swing.JLabel();
-        campoSenhaLogin1 = new javax.swing.JPasswordField();
         labelSenhaLogin3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        campoUsuarioLogin1 = new javax.swing.JTextField();
+        campoUsuarioLogin2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("SOFTNESS");
+        setTitle("Softness.Configurações");
 
         painelBackground.setBackground(new java.awt.Color(255, 255, 255));
-
-        botaoAcessarLogin.setBackground(new java.awt.Color(0, 51, 102));
-        botaoAcessarLogin.setForeground(new java.awt.Color(255, 255, 255));
-        botaoAcessarLogin.setText("Acessar");
-        botaoAcessarLogin.setContentAreaFilled(false);
-        botaoAcessarLogin.setOpaque(true);
-        botaoAcessarLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAcessarLoginActionPerformed(evt);
-            }
-        });
-        botaoAcessarLogin.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                botaoAcessarLoginKeyPressed(evt);
-            }
-        });
-
-        botaoCancelarLogin.setBackground(new java.awt.Color(0, 51, 102));
-        botaoCancelarLogin.setForeground(new java.awt.Color(255, 255, 255));
-        botaoCancelarLogin.setText("Cancelar");
-        botaoCancelarLogin.setContentAreaFilled(false);
-        botaoCancelarLogin.setOpaque(true);
-        botaoCancelarLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCancelarLoginActionPerformed(evt);
-            }
-        });
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,7 +84,7 @@ public class ConfigFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelUsuarioLogin1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(430, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,6 +95,13 @@ public class ConfigFrame extends javax.swing.JFrame {
         );
 
         campoUsuarioLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        campoUsuarioLogin.setText("./src/br.fitness.password/");
+        campoUsuarioLogin.setEnabled(false);
+        campoUsuarioLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoUsuarioLoginActionPerformed(evt);
+            }
+        });
 
         labelSenhaLogin.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         labelSenhaLogin.setText("Senhas:");
@@ -131,15 +109,29 @@ public class ConfigFrame extends javax.swing.JFrame {
         labelSenhaLogin1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         labelSenhaLogin1.setText("Manual:");
 
-        campoSenhaLogin.setPreferredSize(new java.awt.Dimension(6, 23));
-
         labelSenhaLogin2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         labelSenhaLogin2.setText("Logs:");
 
-        campoSenhaLogin1.setPreferredSize(new java.awt.Dimension(6, 23));
-
         labelSenhaLogin3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         labelSenhaLogin3.setText("Diretórios");
+
+        campoUsuarioLogin1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        campoUsuarioLogin1.setText("./src/br.fitness.documents/");
+        campoUsuarioLogin1.setEnabled(false);
+        campoUsuarioLogin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoUsuarioLogin1ActionPerformed(evt);
+            }
+        });
+
+        campoUsuarioLogin2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        campoUsuarioLogin2.setText("./src/br.fitness.log/");
+        campoUsuarioLogin2.setEnabled(false);
+        campoUsuarioLogin2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoUsuarioLogin2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelBackgroundLayout = new javax.swing.GroupLayout(painelBackground);
         painelBackground.setLayout(painelBackgroundLayout);
@@ -148,28 +140,26 @@ public class ConfigFrame extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelBackgroundLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelSenhaLogin3)
                     .addGroup(painelBackgroundLayout.createSequentialGroup()
-                        .addComponent(botaoCancelarLogin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoAcessarLogin))
-                    .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelBackgroundLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelSenhaLogin1)
+                                    .addComponent(labelSenhaLogin2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoUsuarioLogin2)
+                                    .addComponent(campoUsuarioLogin1)))
                             .addGroup(painelBackgroundLayout.createSequentialGroup()
                                 .addComponent(labelSenhaLogin)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoUsuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelBackgroundLayout.createSequentialGroup()
-                                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelSenhaLogin2)
-                                    .addComponent(labelSenhaLogin1))
-                                .addGap(13, 13, 13)
-                                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoSenhaLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addComponent(labelSenhaLogin3)))
+                                .addComponent(campoUsuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(15, 15, 15)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         painelBackgroundLayout.setVerticalGroup(
@@ -186,19 +176,15 @@ public class ConfigFrame extends javax.swing.JFrame {
                     .addComponent(campoUsuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelSenhaLogin1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(labelSenhaLogin1)
+                    .addComponent(campoUsuarioLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoSenhaLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelSenhaLogin2))
-                .addGap(17, 17, 17)
+                    .addComponent(labelSenhaLogin2)
+                    .addComponent(campoUsuarioLogin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoAcessarLogin)
-                    .addComponent(botaoCancelarLogin))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -215,18 +201,17 @@ public class ConfigFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoCancelarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCancelarLoginActionPerformed
-        //Sair do sistema
-        System.exit(0);
-    }//GEN-LAST:event_botaoCancelarLoginActionPerformed
+    private void campoUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoUsuarioLoginActionPerformed
 
-    private void botaoAcessarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAcessarLoginActionPerformed
-        
-    }//GEN-LAST:event_botaoAcessarLoginActionPerformed
+    private void campoUsuarioLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioLogin1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoUsuarioLogin1ActionPerformed
 
-    private void botaoAcessarLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botaoAcessarLoginKeyPressed
-
-    }//GEN-LAST:event_botaoAcessarLoginKeyPressed
+    private void campoUsuarioLogin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioLogin2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoUsuarioLogin2ActionPerformed
 
     //Inicialização
     public static void main(String args[]) {
@@ -263,11 +248,9 @@ public class ConfigFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoAcessarLogin;
-    private javax.swing.JButton botaoCancelarLogin;
-    private javax.swing.JPasswordField campoSenhaLogin;
-    private javax.swing.JPasswordField campoSenhaLogin1;
     private javax.swing.JTextField campoUsuarioLogin;
+    private javax.swing.JTextField campoUsuarioLogin1;
+    private javax.swing.JTextField campoUsuarioLogin2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

@@ -15,6 +15,9 @@ package br.fitness.classes;
 import br.fitness.implementacao.ProfessorIFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class ProfessorActionListener implements ActionListener {
@@ -28,10 +31,40 @@ public class ProfessorActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if ("salvar".equals(e.getActionCommand())) {
-            Professor p = frameProfessor.getProfessor();
-            JOptionPane.showMessageDialog(frameProfessor, "Dados cadastrados!");
+            Professor c = frameProfessor.getProfessor();
+            //Login l = frameLogin.getLogin();
+
+            //Verifica Descrição do cliente
+            if ("".equals(c.getPrf_nome())) {
+                //Gera Log
+                String vmsg = "O usuario não informou o nome do professor.";
+                
+                JOptionPane.showMessageDialog(frameProfessor, "Obrigatório informar descrição do professor!");
+                try {
+                    Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
+                } catch (IOException ex) {
+                    Logger.getLogger(ProfessorActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            JOptionPane.showMessageDialog(frameProfessor, "Dados cadastrados com sucesso!");
+
+            //Gera Log
+            String vmsg = "O usuario cadastrou um novo professor: " + c.getPrf_nome();
+            try {
+                Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ProfessorActionListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         } else if ("limpar".equals(e.getActionCommand())) {
-            JOptionPane.showMessageDialog(frameProfessor, "Clicou em cancelar!");
-        }
+            //Gera Log
+            String vmsg = "O usuario limpou os dados da tela de professor!";
+            try {
+                Log.Log(vmsg, "./src/br/fitness/log/Softness_log.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ProfessorActionListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } 
     }
 }
